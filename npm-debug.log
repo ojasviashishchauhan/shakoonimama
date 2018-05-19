@@ -1,0 +1,26 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'init' ]
+2 info using npm@1.4.21
+3 info using node@v8.9.3
+4 silly package data undefined
+5 info init written successfully
+6 error Error: Invalid name: "Shopping website"
+6 error     at ensureValidName (/usr/lib/nodejs/normalize-package-data/lib/fixer.js:336:15)
+6 error     at Object.fixNameField (/usr/lib/nodejs/normalize-package-data/lib/fixer.js:215:5)
+6 error     at /usr/lib/nodejs/normalize-package-data/lib/normalize.js:32:38
+6 error     at Array.forEach (<anonymous>)
+6 error     at normalize (/usr/lib/nodejs/normalize-package-data/lib/normalize.js:31:15)
+6 error     at final (/usr/lib/nodejs/read-package-json/read-json.js:342:33)
+6 error     at then (/usr/lib/nodejs/read-package-json/read-json.js:126:33)
+6 error     at /usr/lib/nodejs/read-package-json/read-json.js:331:40
+6 error     at /usr/lib/nodejs/graceful-fs/graceful-fs.js:78:16
+6 error     at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:511:3)
+7 error If you need help, you may report this *entire* log,
+7 error including the npm and node versions, at:
+7 error     <http://github.com/npm/npm/issues>
+8 error System Linux 4.14.0-parrot13-amd64
+9 error command "/usr/bin/node" "/usr/bin/npm" "init"
+10 error cwd /home/poseidon/Desktop/project
+11 error node -v v8.9.3
+12 error npm -v 1.4.21
+13 verbose exit [ 1, true ]
