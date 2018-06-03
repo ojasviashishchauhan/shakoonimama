@@ -1,0 +1,77 @@
+<% include header.html %>
+
+
+            <div id="content">
+            <div class="container">
+
+                <div class="col-md-12 col-sm-12">
+
+                    <ul class="breadcrumb">
+                        <li><a href="/">Home</a>
+                        </li>
+                        <li>New account / Sign UP</li>
+                    </ul>
+
+                </div>
+         </div>
+         <div class="container">
+             <div class="col-md-6 col-sm-6">
+                 <img class="img-responsive" src="back.png">
+             </div>
+             <div class="col-md-6 col-sm-8">
+                    <div class="box">
+                        <h1>New Account</h1>
+                        <p class="text-muted">If you have any questions, please feel free to <a href="#">contact us</a>, our customer service center is working for you.</p>
+
+
+                        <form action="/signup" method="post">
+                           <div class="form-group col-md-8 col-md-offset-2">
+                              <label class="label-set">First Name</label>
+                              <input type="text" class="form-control" id="fname" name="first_name" placeholder="first Name" required >
+                           </div>
+                           <div class="form-group col-md-8 col-md-offset-2">
+                              <label class="label-set">Last Name</label>
+                              <input type="text" placeholder="Last Name" class="form-control" id="lname" name="last_name" required>
+                           </div>
+                           <div class="form-group col-md-8 col-md-offset-2">
+                              <label class="label-set">Email Id</label>
+                              <input type="email" placeholder="Email Id"  class="form-control" id="email" name="email" required>
+                           </div>
+                           <div class="form-group col-md-8 col-md-offset-2">
+                              <label class="label-set">Password</label>
+                              <input type="password" placeholder="*******" class="form-control" id="pass" name="password" required>
+                           </div>
+                           <div class="form-group col-md-8 col-md-offset-2">
+                              <label class="label-set">Mobile Number</label>
+                              <div class="input-group">
+                                 <div class="input-group-addon">+91</div>
+                                 <input type="text" class="form-control" id="Pnumb" name="mobile_number" placeholder="989******5" required>
+                              </div>
+                           </div>
+                           <div class="col-md-8 col-md-offset-2">
+                              <label class="label-set">Gender</label>
+                              <section id="first" class="section">
+                                 <div class="container">
+                                    <input type="radio" name="group1" id="radio-1"  value="Male">
+                                    <label for="radio-1"><span class="radio">Male</span></label>
+                                 </div>
+                                 <div class="container">
+                                    <input type="radio" name="group1" id="radio-2"  value="Female">
+                                    <label for="radio-2"><span class="radio">Female</span></label>
+                                 </div>
+                              </section>
+                           </div>
+                           <div class="row">
+                              <div class=col-md-4>
+                                 <input type="submit" class="btn btn-primary btn-lg btn-set" name="submit_signup" value="SignUp">
+                              </div>
+
+                           </div>
+                        </form>
+
+                    </div>
+            </div>
+        </div>
+      </div>
+
+         <% include footer.html %>

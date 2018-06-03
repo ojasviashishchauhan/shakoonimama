@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Online Shopping</title>
+        <link rel="stylesheet" href="add.css" type="text/css"/>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="add_javascript.js"></script>
+    </head>
+    <body>
+        <div class="container">
+        <header class="col-md-12">
+
+            <h3 class="head-style">New Item</h3>
+
+
+        </header>
+        <form action="/add_product" enctype="multipart/form-data" method="post">
+           <div class="form-group col-md-6 col-sm-8">
+              <label>Item Code</label>
+              <input type="text" class="form-control" name="itemcode" id="icode">
+              <label>Item Name</label>
+              <input type="text" class="form-control" name="itemname" id="iname">
+              <label>Item Group</label>
+              <input type="text" class="form-control" name="itemgroup" id="igrp">
+              <label>Selling Price</label>
+              <input type="number" class="form-control" name="sellingp" id="sp">
+              <label>quantity</label>
+              <input type="number" class="form-control" name="quantity" id="sp">
+
+              <label>SMALL quantity</label>
+              <input type="number" class="form-control" name="squantity" id="sp">
+              <label>MEDIUM quantity</label>
+              <input type="number" class="form-control" name="mquantity" id="sp">
+              <label>LARGE quantity</label>
+              <input type="number" class="form-control" name="lquantity" id="sp">
+              <label>XTRA LARGE quantity</label>
+              <input type="number" class="form-control" name="xlquantity" id="sp">
+              <label>Description</label>
+              <input type="text" class="form-control" name="description" id="igrp">
+
+              <label>Stock</label>
+              <div class="radio">
+                 <label><input type="radio" name="instock" value="1">In Stock</label><br>
+                 <label><input type="radio" name="instock" value="0">Out Of Stock</label>
+              </div>
+              <label>Image-1</label>
+              <input type="file" name="pic1" accept="image/*">
+              <label>Image-2</label>
+              <input type="file" name="pic2" accept="image/*">
+              <label>Image-3</label>
+              <input type="file" name="pic3" accept="image/*">
+              <br>
+
+              <button type="submit" class="btn btn-success">Save</button>
+              <button type="reset" class="btn btn-default">Cancel</button>
+           </div>
+        </form>
+        </div>
+        <div class="row">
+    			<% for (var i = 0; i < data.length; i++) { %>
+    			<div class="col-md-4">
+    				<div class="thumbnail">
+    					<div class="caption">
+    						<h3>Name=<%= data[i].Name %></h3>
+                <h3>Group=<%= data[i].Group %></h3>
+                <h3>Price=<%= data[i].SellingPrice %></h3>
+                <h3>Quantity=<%= data[i].Quantity %></h3>
+    						<!-- <h3><%= data[i]._id %></h3> -->
+    						<img src="<%= data[i].image1 %>" class = "img-thumbnail" style="heigh:30%;width:30%">
+    						<!--<img src="<%= data[i].image2 %>" class = "img-thumbnail">
+                <img src="<%= data[i].image3 %>" class = "img-thumbnail">
+              -->
+    						<form method="post" action="/delete">
+    							<input id="prodId" name="prodId" type="hidden" value="<%= data[i]._id %>">
+    							<input type="submit"  class = "btn btn-danger" name="Delete" value="Delete">
+    						</form>
+    					</div>
+    				</div>
+    			</div>
+    			<% } %>
+    		</div>
+    </body>
+</html>

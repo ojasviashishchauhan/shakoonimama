@@ -1,0 +1,224 @@
+<% include header.html %>
+    <br>
+        <div>
+        <img src="catban-020180307111421.jpg" class="image-slider img-responsive">
+        </div>
+        <br>
+         <div id="all">
+
+        <div id="content">
+            <div class="container">
+
+                <div class="col-md-12">
+                    <ul class="breadcrumb">
+                        <li><a href="#">Home</a>
+                        </li>
+                        <li>View</li>
+                    </ul>
+                </div>
+            </div>
+             </div>
+             <div class="banner-bootom-w3-agileits">
+	<div class="container">
+	     <div class="col-md-4 single-right-left ">
+			<div class="grid images_3_of_2">
+				<div class="flexslider">
+
+					<ul class="slides">
+						<li data-thumb="<%= data.image1 %>">
+							<div class="thumb-image"> <img src="<%= data.image1 %>" data-imagezoom="true" class="img-responsive"> </div>
+						</li>
+						<li data-thumb="<%= data.image2 %>">
+							<div class="thumb-image"> <img src="<%= data.image2 %>" data-imagezoom="true" class="img-responsive"> </div>
+						</li>
+						<li data-thumb="<%= data.image3 %>">
+							<div class="thumb-image"> <img src="<%= data.image3 %>" data-imagezoom="true" class="img-responsive"> </div>
+						</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-8 single-right-left simpleCart_shelfItem">
+					<h3><%= data.Name %></h3>
+					<p><span class="item_price">Rs<%= data.SellingPrice %></span> <del>- Rs.500</del></p>
+
+					<div class="description">
+						<h5>Check delivery, payment options and charges at your location</h5>
+						 <form action="#" method="post">
+						<input type="text" value="Enter pincode"  required="">
+						<input type="submit" value="Check">
+						</form>
+					</div>
+											<div class="clearfix"> </div>
+                      <div class="occasional">
+          <h5 class="myheadset">Sizes :</h5>
+
+          <div class="colr ert col-md-1">
+
+            <label class="radio"><input type="radio" name="r1" checked><i></i>(S)</label>
+          </div>
+          <div class="colr col-md-1">
+            <label class="radio"><input type="radio" name="r1"><i></i>(M)</label>
+          </div>
+
+
+          <div class="colr col-md-1">
+            <label class="radio"><input type="radio" name="r1"><i></i>(L)</label>
+          </div>
+          <div class="colr col-md-1">
+            <label class="radio"><input type="radio" name="r1"><i></i>(XL)</label>
+          </div>
+
+
+          <div class="clearfix"> </div>
+        </div>
+
+					<div class="occasion-cart">
+						<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+															<form action="/addToCart" method="post">
+																<fieldset>
+																<input id="prodId" name="prodId" type="hidden" value="<%= data._id %>">
+																	<input type="submit" name="submit" value="Add to cart" class="button">
+																</fieldset>
+															</form>
+														</div>
+
+
+
+        </div>
+        </div>
+	 			<div class="clearfix"> </div>
+				<!-- /new_arrivals -->
+	           <div class="responsive_tabs_agileits">
+				<div id="horizontalTa">
+						<ul class="resp-tabs-list">
+
+							<li class="ul-view-color">Reviews</li>
+
+						</ul>
+					<div class="resp-tabs-container">
+
+					   <div class="tab1">
+
+							<div class="single_page_agile_its_w3ls">
+
+            <% if(user) { %>
+
+                  <div class="container">
+
+
+                    <h2 class="h2-view">If you have purchased the product please provide your rating.</h2>
+
+                      <label for="input-1" class="control-label">Help us improve :</label>
+
+          <form method="post" action="/rating">
+            <div class="form-group col-md-4 col-sm-6">
+                      <input type="hidden" name="prid" value="<%= data._id %>" >
+                      <input id="input-1" name="rating" class="rating rating-loading" data-min="0" data-max="5" data-step="0.1" value="5">
+                      <input type="text" name="comment" placeholder="Reviews.." class="form-control">
+                      <input type="hidden" name="code" value="<%= data._id %>">
+                      <br>
+                      <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+          </form>
+          <% } %>
+          <div class="col-md-12">
+          <h2 class="h2-view-set1">Comments:</h2>
+          <br>
+        </div>
+
+<div class="col-md-9">
+          <% if(rev){ %>
+          <% for (var i = 0; i < rev.rated.length; i++) { %>
+<h4 class="h4-view">
+          Name: <%= rev.rated[i].name %>&nbsp;|
+          Rating: <%= rev.rated[i].review %>&nbsp;|
+          Review: <%= rev.rated[i].comment %>&nbsp;|
+        </h4>
+
+      <hr>
+          <% } }%>
+
+    </div>
+
+
+                  </div>
+
+
+                  <script>
+
+                  $("#rating").rating();
+
+                  </script>
+
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+
+        </div>
+             </div>
+        </div>
+
+        <% include footer.html %>
+
+
+<!-- js -->
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+
+<script src="modernizr.custom.js"></script>
+
+	<script src="minicart.min.js"></script>
+
+
+
+<script src="imagezoom.js"></script>
+
+<script src="easy-responsive-tabs.js"></script>
+<script>
+	$(document).ready(function () {
+	$('#horizontalTab').easyResponsiveTabs({
+	type: 'default', //Types: default, vertical, accordion
+	width: 'auto', //auto or any width like 600px
+	fit: true,   // 100% fit in a container
+	closed: 'accordion', // Start closed if in accordion view
+	activate: function(event) { // Callback function if tab is switched
+	var $tab = $(this);
+	var $info = $('#tabInfo');
+	var $name = $('span', $info);
+	$name.text($tab.text());
+	$info.show();
+	}
+	});
+	$('#verticalTab').easyResponsiveTabs({
+	type: 'vertical',
+	width: 'auto',
+	fit: true
+	});
+	});
+</script>
+<!-- FlexSlider -->
+<script src="jquery.flexslider.js"></script>
+						<script>
+						// Can also be used with $(document).ready()
+							$(window).load(function() {
+								$('.flexslider').flexslider({
+								animation: "slide",
+								controlNav: "thumbnails"
+								});
+							});
+						</script>
+					<!-- //FlexSlider-->
+<!-- //script for responsive tabs -->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="move-top.js"></script>
+<script type="text/javascript" src="jjquery.easing.min.js"></script>
+
+
+<script type="text/javascript" src="bootstrap.js"></script>
+    </body>
+</html>

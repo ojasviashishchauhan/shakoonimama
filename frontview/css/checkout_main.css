@@ -1,0 +1,190 @@
+/*header tags */
+.header-start
+{
+    width: auto;
+    height: 30px;
+    background-color:gainsboro;
+}
+.ul-set
+{
+    
+    float: right;
+}
+.li-set
+{
+    display: inline-block;
+    margin: 8px;
+    font-size: 12px;
+}
+.a-set
+{
+    font-family:inherit;
+    color: black;
+    font-weight: bold;
+    margin: 9px;
+}
+
+/*logo set*/
+.logo
+{
+    width: 200px;
+    height: 80px;
+    position: relative;
+    right: 60px;
+    top: 
+    
+}
+/*navigation bar adjust*/
+.adjust
+{
+  margin: 12px;
+
+}
+/*cart colour*/
+.btn-cart
+{
+    background-color: azure;
+    border-color: azure;
+    color: white;
+}
+/*------------------------*/
+/*heading*/
+.h2-color
+{
+    text-align: center;
+    color: #4fbfa8;
+   
+    font-weight: 700;
+    border-bottom: 2px solid #4fbfa8;
+    border-top: 2px solid #4fbfa8;
+font-size: 40px;
+    
+}
+.h2-adjust
+{
+    margin-top:1.7em;
+}
+/*navbar login*/
+.navbar-login {
+  margin-top: 18px;
+  margin-bottom: 18px;
+    margin-right: 20px;
+}
+/*image text*/
+.top-left {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+}
+.text-style
+{
+    font-family: sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    
+}
+.text-style2
+{
+     font-family: sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+
+/**********RADIO BUTTON TAG**************************************/
+
+/*#first {
+  background-color: #4B4D65;
+}
+#second {
+  background-color: #FF8A66;
+}*/
+.section {
+  padding: 0px;
+  padding-left: 40px;
+}
+.section input[type="radio"],
+.section input[type="checkbox"]{
+  display: none;
+}
+.container {
+  margin-bottom: 10px;
+}
+.container1 label {
+  position: relative;
+}
+
+/* Base styles for spans */
+.container span::before,
+.container span::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+/* Radio buttons */
+.container span.radio:hover {
+  cursor: pointer;
+}
+.container span.radio::before {
+  left: -52px;
+  width: 45px;
+  height: 25px;
+  background-color: #A8AAC1;
+  border-radius: 50px;
+}
+.container span.radio::after {
+  left: -49px;
+  width: 17px;
+  height: 17px;
+  border-radius: 10px;
+  background-color: #6C788A;
+  transition: left .25s, background-color .25s;
+}
+input[type="radio"]:checked + label span.radio::after {
+  left: -27px;
+  background-color:#4fbfa8;
+}
+///*******login header form styling***********////////////
+
+.h4-color
+{
+    color: #4fbfa8;
+;
+    
+}
+
+.input-border
+{
+    outline: none;
+    border-bottom: 1px solid lightgray;
+    border-top:transparent;
+    border-right: transparent;
+    border-left: transparent;
+   /* border-right:1px solid lightgray;
+    border-left: 1px solid lightgray;*/
+    min-width:100%;
+    margin: auto;
+    
+}
+.input-border2
+{
+    outline: none;
+    border-bottom:1px solid lightgray;
+    border-top:transparent;
+    border-right: transparent;
+    border-left: transparent;
+   /* border-right:1px solid lightgray;
+    border-left: 1px solid lightgray;*/
+    min-width:100%;
+}
+.check-box{
+    font-weight: 600;
+    font-size: 12px;
+        
+    
+    
+}
