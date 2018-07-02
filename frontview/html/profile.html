@@ -51,40 +51,31 @@
                       <thead>
                           <tr>
                               <th>Order</th>
+                              <th>Name</th>
                               <th>Date</th>
                               <th>Total</th>
-                              <th>Status</th>
+                              <th>Size</th>
 
                           </tr>
                       </thead>
+                      <% if(orderd.items.length>0){ %>
                       <tbody>
+                        <% for(var i = 0; i < orderd.items.length; i++ ){ %>
                           <tr>
-                              <th>#1</th>
-                              <td>22/06/2013</td>
-                              <td>₹250.00</td>
-                              <td><span class="label label-info">Being prepared</span>
+                              <th><img src="<%= orderd.items[i].image %>"></th>
+                              <th><%= orderd.items[i].name %> </th>
+                              <td><%= orderd.items[i].dateo %></td>
+                              <td>₹<%= orderd.items[i].price %></td>
+                              <td><span class="label label-info"><%= orderd.items[i].size %></span>
                               </td>
 
                           </tr>
-                          <tr>
-                              <th>#2</th>
-                              <td>22/06/2013</td>
-                              <td>₹250.00</td>
-                              <td><span class="label label-info">Being prepared</span>
-                              </td>
-
-                          </tr>
-                          <tr>
-                              <th>#3</th>
-                              <td>22/06/2013</td>
-                              <td>₹250.00</td>
-                              <td><span class="label label-success">Received</span>
-                              </td>
-
-                          </tr>
-
-
+                          <% } %>
                       </tbody>
+                      <% }else{ %>
+                        <h2>WOW!! You have NO orders </h2>
+
+                        <% } %>
                   </table>
               </div>
           </div>

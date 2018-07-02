@@ -8,7 +8,7 @@ html { overflow-x: hidden; }
 }
 .ul-set
 {
-    
+
     float: right;
 }
 .li-set
@@ -32,8 +32,8 @@ html { overflow-x: hidden; }
     height: 80px;
     position: relative;
     right: 60px;
-    top: 
-    
+    top:
+
 }
 /*navigation bar adjust*/
 .adjust
@@ -54,12 +54,12 @@ html { overflow-x: hidden; }
 {
     text-align: center;
     color: #4fbfa8;
-   
+
     font-weight: 700;
     border-bottom: 2px solid #4fbfa8;
     border-top: 2px solid #4fbfa8;
 font-size: 40px;
-    
+
 }
 .h2-adjust
 {
@@ -82,7 +82,7 @@ font-size: 40px;
     font-family: sans-serif;
     font-size: 28px;
     font-weight: 700;
-    
+
 }
 .text-style2
 {
@@ -155,7 +155,7 @@ input[type="radio"]:checked + label span.radio::after {
 {
     color: #4fbfa8;
 
-    
+
 }
 .btn-set {
   position: relative;
@@ -178,7 +178,7 @@ left: 200px;
 .cart-set
 {
     padding-top: 1em;
-    
+
 }
 .change-color
 {

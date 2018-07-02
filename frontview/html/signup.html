@@ -1,4 +1,5 @@
 <% include header.html %>
+<!--<script type="text/javascript" src="validation.js"></script>-->
 
 
             <div id="content">
@@ -9,7 +10,7 @@
                     <ul class="breadcrumb">
                         <li><a href="/">Home</a>
                         </li>
-                        <li>New account / Sign UP</li>
+                        <li>New account / Sign Up</li>
                     </ul>
 
                 </div>
@@ -21,13 +22,19 @@
              <div class="col-md-6 col-sm-8">
                     <div class="box">
                         <h1>New Account</h1>
-                        <p class="text-muted">If you have any questions, please feel free to <a href="#">contact us</a>, our customer service center is working for you.</p>
+                        <p class="text-muted">If you have any questions, please feel free to <a href="/contact_us">contact us</a>, our customer service center is working for you.</p>
+                        <% if (message) { %>
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <strong>HEY!!</strong> <%= message %>
+                        </div>
+                        <% } %>
 
 
-                        <form action="/signup" method="post">
+                        <form action="/signup" method="post" onsubmit="return checkform(this)" id="myform">
                            <div class="form-group col-md-8 col-md-offset-2">
                               <label class="label-set">First Name</label>
-                              <input type="text" class="form-control" id="fname" name="first_name" placeholder="first Name" required >
+                              <input type="text" class="form-control" id="fname" name="first_name" placeholder="First Name" required >
                            </div>
                            <div class="form-group col-md-8 col-md-offset-2">
                               <label class="label-set">Last Name</label>
@@ -41,29 +48,33 @@
                               <label class="label-set">Password</label>
                               <input type="password" placeholder="*******" class="form-control" id="pass" name="password" required>
                            </div>
+                        <!--   <div class="form-group col-md-8 col-md-offset-2">0
+                              <label class="label-set">Confirm Password</label>
+                              <input type="password" placeholder="*******" class="form-control" id="pass1" name="password" required >
+                           </div>-->
                            <div class="form-group col-md-8 col-md-offset-2">
                               <label class="label-set">Mobile Number</label>
                               <div class="input-group">
                                  <div class="input-group-addon">+91</div>
-                                 <input type="text" class="form-control" id="Pnumb" name="mobile_number" placeholder="989******5" required>
+                                 <input type="text" class="form-control" id="Pnumb" name="mobile_number" placeholder="989******5" required maxlength="10">
                               </div>
                            </div>
                            <div class="col-md-8 col-md-offset-2">
                               <label class="label-set">Gender</label>
                               <section id="first" class="section">
                                  <div class="container">
-                                    <input type="radio" name="group1" id="radio-1"  value="Male">
+                                    <input type="radio" name="group1" id="radio-1"  value="Male" required>
                                     <label for="radio-1"><span class="radio">Male</span></label>
                                  </div>
                                  <div class="container">
-                                    <input type="radio" name="group1" id="radio-2"  value="Female">
+                                    <input type="radio" name="group1" id="radio-2"  value="Female" required>
                                     <label for="radio-2"><span class="radio">Female</span></label>
                                  </div>
                               </section>
                            </div>
                            <div class="row">
-                              <div class=col-md-4>
-                                 <input type="submit" class="btn btn-primary btn-lg btn-set" name="submit_signup" value="SignUp">
+                              <div class="col-md-4 col-md-offset-4">
+                                 <input type="submit" class="btn btn-primary btn-block btn-set" name="submit_signup" value="SignUp" onclick="myradio()">
                               </div>
 
                            </div>

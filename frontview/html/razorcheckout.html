@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head >
+  <meta name="viewport" content="width=device-width">
+</head>
+<body><form action="/purchase" method="POST">
+<!-- Note that the amount is in paise = 50 INR -->
+<script
+    src="https://checkout.razorpay.com/v1/checkout.js"
+    data-key="rzp_test_SbMRoudvvusfuG"
+    data-amount="24900"
+    data-buttontext="Pay with Razorpay"
+    data-name="<%= user.firstname %>"
+    data-description="Purchase Description"
+    data-image="https://your-awesome-site.com/your_logo.jpg"
+    data-prefill.name="no"
+    data-prefill.email="no"
+    data-theme.color="#F37254"
+></script>
+<input type="hidden" value="Hidden Element" name="hidden">
+</form>
+</body>
+</html>

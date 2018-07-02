@@ -27,6 +27,8 @@ app.use(session({ cookie: { maxAge: 6000000 },
     })
   }));
 
+
+
 // Passport init
 app.use(passport.initialize());
 app.use(passport.session());
@@ -58,9 +60,11 @@ app.set('views', path.join(__dirname + '/frontview/html/'));
 var routes = require('./routes/routes');
 var userRoutes=require('./routes/user');
 var adminRoutes=require('./routes/admin');
+//var orderlist=require('./routes/ordersheetonline/index');
 app.use('/',routes);
 app.use('/',userRoutes);
 app.use('/',adminRoutes);
+//app.use('/',orderlist);
 
 
 // Express Validator
@@ -94,6 +98,6 @@ app.use(function (req, res, next) {
 
 
 
-var server=app.listen(3000,function(){
+var server=app.listen(3600,function(){
   console.log('server running on 3000');
 });

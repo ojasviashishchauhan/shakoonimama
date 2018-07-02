@@ -1,0 +1,155 @@
+<% include header.html %>
+<link rel="stylesheet" href="checkout_main.css" type="text/css" >
+
+        <div id="all">
+
+        <div id="content">
+            <div class="container">
+
+                <div class="col-md-12">
+                    <ul class="breadcrumb">
+                        <li><a href="#">Home</a>
+                        </li>
+                        <li>Checkout</li
+                    </ul>
+                </div>
+                 <div class="col-md-8" id="checkout">
+
+                    <div class="box">
+                        <form method="post" action="/purchase">
+                            <h1>Checkout</h1>
+                            <ul class="nav nav-pills nav-justified">
+                                <li class=""><a href="/checkout"><i class="fa fa-map-marker"></i><br>Net Banking</a>
+                                </li>
+                                <li class="active"><a href="/checkoutset"><i class="fa fa-inr"></i><br>Using COD</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="content">
+                                <div class="row">
+
+                                   <div class="col-sm-6 col-md-4">
+                                       <div class="form-group">
+                                           <legend>Pin Code<sup>*</sup></legend>
+                                           <input type="number" id="pin" name="pin" onkeydown="pincall(document.getElementById('pin').value)" class="input-border" required>
+
+                            </div>
+                            </div>
+                                    </div>
+
+                                <div class="row">
+                                     <div class="col-sm-6 col-md-4">
+                                       <div class="form-group">
+                                           <legend>City/District<sup>*</sup></legend>
+                                           <input type="text" name="city" class="input-border" required>
+
+
+                            </div>
+                            </div>
+                                    <div class="col-sm-6 col-md-4">
+                                       <div class="form-group">
+                                           <legend>State<sup>*</sup></legend>
+                                           <input type="text" name="state" class="input-border" required>
+                                           <input type="hidden" name="query" value="<%= data.total %>">
+                                           <input type="hidden" name="email" value="<%= user.email %>">
+
+                            </div>
+                            </div>
+                            </div>
+                                <div class="row">
+                                     <div class="col-sm-6 col-md-4">
+                                       <div class="form-group">
+                                           <legend>Name<sup>*</sup></legend>
+                                           <input type="text" name="name" class="input-border" required>
+
+
+                            </div>
+                                    </div>
+                                </div>
+                                 <div class="row">
+                                     <div class="col-sm-6 col-md-6">
+                                       <div class="form-group">
+                                           <legend>Address<sup>*</sup></legend>
+                                           <input type="text" name="address" class="input-border2" required>
+                                            <input type="hidden" value="CASH ON DELIVERY!!" name="payme">
+
+                            </div>
+                                    </div>
+                                </div>
+                                   <div class="row">
+                                     <div class="col-sm-6 col-md-6">
+                                       <div class="form-group">
+                                           <legend>Line 1<sup>*</sup></legend>
+                                           <input type="text" name="address1"  class="input-border2" required>
+
+
+                            </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                     <div class="col-sm-6 col-md-4">
+                                       <div class="form-group">
+                                           <legend>Phone Number<sup>*</sup></legend>
+                                           <input type="tel" name="phone" class="input-border" required>
+                                            <input type="hidden" value="<%= data.total +30 %>" name="totalo">
+
+                            </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                                <div class="checkbox">
+                                    <label ><p class="check-box">**Extra Rs.30 for COD</p></label>
+</div>
+                            </div>
+                           <div class="box-footer">
+                                <div class="pull-left">
+                                    <a href="/cart" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back to basket</a>
+                                </div>
+                                <div class="pull-right">
+                                    <button type="submit" class="btn btn-primary">Confirm Order!!<i class="fa fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                     </div>
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="box" id="order-summary">
+                        <div class="box-header">
+                            <h3>Order summary</h3>
+                        </div>
+
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>Order Total</td>
+                                        <th> ₹<%= data.total %></th>
+                                    </tr>
+                                    <tr>
+                                        <td>Delivery</td>
+                                        <th> ₹<%= extra %></th>
+                                    </tr>
+
+                                    <tr class="total">
+                                        <td>Total Payable</td>
+                                        <th> ₹₹<%= data.total +30 %></th>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- /.col-md-3 -->
+
+            </div>
+            <!-- /.container -->
+        </div>

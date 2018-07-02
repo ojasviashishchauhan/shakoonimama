@@ -1,170 +1,115 @@
-<!doctype html>
-<html>
-    <head>
-        <title>cart</title>
-<link href='https://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet'>
-<link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7s/css/bootstrap.min.css">
-<link rel="stylesheet" href="view_main.css" type="text/css">
-<script src="respond.min.js"></script>
-<link href="style.default_view.css" rel="stylesheet" id="theme-stylesheet">
+<% include header.html %>
+ <link rel="stylesheet" href="style_cart.css">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href="bootstrap.css" rel="stylesheet" type="text/css" media="all">
-<link href="style.css" rel="stylesheet" type="text/css" media="all">
-<link href="easy-responsive-tabs.css" rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="flexslider.css" type="text/css" media="screen">
-        <link rel="stylesheet" href="style_cart.css">
+<div class="container1">
 
-
-</head>
-
-
-    <body>
-    <!--header tag -->
-        <div class="header" id="home">
-	<div class="container">
-		<ul>
-		    <li> <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-unlock-alt" aria-hidden="true" ></i> Sign In </a></li>
-			<li> <a href="signup"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sign Up </a></li>
-			<li><i class="fa fa-phone" aria-hidden="true"></i> Call :+91-8950745221</li>
-			<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">shakunimama@gmail.com</a></li>
-		</ul>
-	</div>
+<% if (message.length > 0) { %>
+<div class="alert alert-success alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Removed!</strong> <%= message %>
 </div>
-<!-- //header -->
-<!-- header-bot -->
-<div class="header-bot">
-	<div class="header-bot_inner_wthreeinfo_header_mid">
-        <div class="col-md-9 logo_agile">
-                <h1><a href="#"><span>S</span>hakooni <span>M</span>ama </a></h1>
-			</div>
-		<div class="col-md-3 header-middle">
-			<form action="#" method="post">
-					<input type="search" name="search" placeholder="Search here..." required="">
-                <input type="submit" value=" ">
-				<div class="clearfix"></div>
-			</form>
-		</div>
-		<!-- header-bot -->
-
-
-		<div class="clearfix"></div>
-	</div>
+<% } %>
+<!-- Mainbar-Starts-Here -->
+<div class="main-bar">
+  <div class="product">
+    <h3>Product</h3>
+  </div>
+  <div class="product">
+    <h3>Size</h3>
+  </div>
+  <div class="quantity">
+    <h3>Quantity</h3>
+  </div>
+  <div class="price">
+    <h3>Price</h3>
+  </div>
+  <div class="clear"></div>
 </div>
+<!-- //Mainbar-Ends-Here -->
 
-	<div class="container">
-
-    <% if (message.length > 0) { %>
-    <div class="alert alert-success alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <strong>Removed!</strong> <%= message %>
-    </div>
-    <% } %>
-		<!-- Mainbar-Starts-Here -->
-		<div class="main-bar">
-			<div class="product">
-				<h3>Product</h3>
-			</div>
-			<div class="quantity">
-				<h3>Quantity</h3>
-			</div>
-			<div class="price">
-				<h3>Price</h3>
-			</div>
-			<div class="clear"></div>
-		</div>
-		<!-- //Mainbar-Ends-Here -->
-<% if(foundCart) { %>
 <% for(var i = 0; i < foundCart.items.length; i++ ){ %>
-		<div class="items">
-
-<% if(foundCart.items[i].item) { %>
-			<div class="item1">
-				<div class="close1">
-					<!-- Remove-Item --><div class="alert-close1"> </div><!-- //Remove-Item -->
-					<div class="image1">
-						<img src="<%= foundCart.items[i].item.image1 %>" alt="item1">
-					</div>
-					<div class="title1">
-						<p><%= foundCart.items[i].item.name %></p>
-					</div>
-					<div class="quantity1">
-						<form action="action_page.php">
-                            <p><%= foundCart.items[i].quantity %></p>
-						</form>
-					</div>
-					<div class="price1">
-						<p>Rs.<%= foundCart.items[i].price %></p>
-					</div>
-					<div class="clear"></div>
-				</div>
-			</div>
-			<!-- //Item1-Ends-Here -->
+<div class="items">
 
 
-			<!-- //Item3-Ends-Here -->
-
-		</div>
-    <% } else { %>
-
-      <div class="title1">
-        <p>Item Discontinued</p>
+  <div class="item1">
+    <div class="close1">
+      <!-- Remove-Item --><div class="alert-close1"> </div><!-- //Remove-Item -->
+      <div class="image1">
+        <img src="<%= foundCart.items[i].item.image4 %>" alt="item1" class="img-1">
       </div>
-      <% }%>
-      <form action="/remove" method="post">
-          <input type="hidden" name="item" value="<%= foundCart.items[i].id %>">
-          <input type="hidden" name="price" value="<%= foundCart.items[i].price %>">
-      <button type="submit" class="btn btn-danger">Remove</button>
-    </form>
-    <% } %>
+      <div class="title1">
+        <p class="p-cart"><%= foundCart.items[i].item.name %></p>
+      </div>
+      <div class="">
+        <form>
+                        <p><%= foundCart.items[i].size %></p>
+        </form>
+      </div>
+      <div class="quantity1">
+        <form>
+                        <p><%= foundCart.items[i].quantity %></p>
+        </form>
+      </div>
+      <div class="price1">
+        <p>Rs.<%= foundCart.items[i].price %></p>
+      </div>
 
-		<div class="total">
-			<div class="total1">Total Price</div>
-			<div class="total2">Rs.<%= foundCart.total %></div>
-			<div class="clear"></div>
-		</div>
-    <% } %>
-        <div class="checkout">
-
-
-			<div class="checkout-btn">
-				<a href="#">Checkout</a>
-			</div>
-			<div class="clear"></div>
-		</div>
-
-
-	</div>
-
-
-
-
-
+      <div class="clear"></div>
+    </div>
+    <div class="checkout-remove btn-xs">
+    <form action="/remove" method="post">
+        <input type="hidden" name="item" value="<%= foundCart.items[i].id %>">
+        <input type="hidden" name="price" value="<%= foundCart.items[i].price %>">
+    <!--<button type="submit">Remove</button>-->
+    <a href="javascript:void(0)" class="remove">Remove</a>
+  </div>
+  </form>
+  </div>
 
 
+</div>
+<% }%>
+
+<div class="total">
+  <div class="total1">Total Price</div>
+  <div class="total2">Rs.<%= foundCart.total %></div>
+  <div class="clear"></div>
+</div>
+    <div class="checkout">
+      <% if(foundCart.items.length>0){ %>
+
+
+  <div class="checkout-btn">
+    <a href="/checkout">Checkout</a>
+  </div>
+
+
+    <% }else{ %>
+    <div class="clear"> Nothing in CART!! Lets's go SHOPPING!!</div>
+      <% } %>
+</div>
+
+
+</div>
 
 
 
 
 
 
+<script>
+
+$(document).ready(function(){
+   $(document).on("click",".remove",function(){
+     var form = $(this).closest("form");
+     //console.log(form);
+     form.submit();
+   });
+});
+</script>
 
 
-
-
-
-
-
-
-
-
-
-
-        <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
 	<script>$(document).ready(function(c) {
 		$('.alert-close1').on('click', function(c){
 			$('.close1').fadeOut('slow', function(c){

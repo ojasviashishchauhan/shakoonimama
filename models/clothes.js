@@ -17,6 +17,7 @@ detailSchema = new Schema( {
 	image1:String,
 	image2:String,
 	image3:String,
+	image4:String,
 	added_date:{
 		type: Date,
 		default: Date.now

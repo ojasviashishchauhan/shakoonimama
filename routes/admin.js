@@ -38,14 +38,15 @@ router.get('/add_product',passportConf.isAuthenticated,function(req,res){
   Detail.find({}, function(err,data){
     if(err){
       console.log(err);
+      res.render('error.html');
     }else{
       console.log(data);
-      res.render('add_product.html',{data:data});
+      res.render('add_product.html',{data:data,user:req.user});
     }
   });
 }else{
   console.log(req.user);
-  res.render('error.html');
+  res.render('error.html',{user:req.user});
 }
 });
 
@@ -87,12 +88,14 @@ router.post('/add_product', upload.any(), function(req,res){
         image1:req.files[0].filename,
         image2:req.files[1].filename,
         image3:req.files[2].filename,
+        image4: req.files[3].filename,
       });
 
       detail.save(function(err, Person){
-        if(err)
+        if(err){
           console.log(err);
-        else{
+          res.render('error.html');
+        }else{
         var review = new Review();
 
         review.productid = Person._id;
@@ -105,7 +108,15 @@ router.post('/add_product', upload.any(), function(req,res){
         });
       }
 
-      res.redirect('/add_product');
+      Detail.find({}, function(err,data){
+        if(err){
+          console.log(err);
+          res.render('error.html');
+        }else{
+          console.log(data);
+          res.render('add_product.html',{data:data,user:req.user});
+        }
+      });
 
       });
 
@@ -118,7 +129,9 @@ router.post('/add_product', upload.any(), function(req,res){
 router.post('/delete',function(req,res){
 
    Detail.findByIdAndRemove(req.body.prodId,function(err, data) {
-
+     if(err){
+       res.render('error.html');
+     }
     console.log(data);
 
   });

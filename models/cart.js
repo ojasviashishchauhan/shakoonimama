@@ -1,7 +1,3 @@
-/**
- * @author: Morebodi Modise
- * @contacts: http://github.com/mrmodise, http://mrmodise.com
- */
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
@@ -11,7 +7,9 @@ var CartSchema = new Schema({
 	items: [{
 		item: {type: Schema.Types.ObjectId, ref: 'Detail'},
 		quantity: {type: Number, default: 1},
-		price: {type: Number, default: 0}
+		size:{type:String, default:'S'},
+		price: {type: Number, default: 0},
+
 	}]
 });
 

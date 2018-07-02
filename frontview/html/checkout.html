@@ -1,319 +1,24 @@
-<!doctype html>
-<html>
-    <head>
-        <title>Online Shopping</title>
-        <!--<link rel="stylesheet" href="bootstrap.min.css" type="text/css"/>-->
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<% include header.html %>
+<script>
+  function pincall(x){
 
-        <link rel="stylesheet" href="checkout_main.css" type="text/css" />
-      
-        <!--for icons we use font-awesome-->
-        
-        <link href="font-awesome.css" rel="stylesheet" type="text/css">
-      
-    
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    $.get("localhost:", function(x){
+   //contents variable now contains the contents of the textfile as string
+
+   //check if file contains the word Hello
+   var hasString = contents.includes("Hello");
+
+   //outputs true if contained, else false
+   console.log(hasString);
+})
+  }
 
 
-   
-   <link href="style.default.css" rel="stylesheet" id="theme-stylesheet">
+</script>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        
-    </head>
-    
-    
-    <body>
-    <!--header tag -->
-        <div class="header">
-            <div class="header-start">
-                <div class="container">
-                    <ul class="ul-set">
-                        <li class="li-set"><a class="a-set" href="#">FAQ</a></li>
-                        <li class="li-set"><a class="a-set" href="#">Contact Us</a></li>
-                        <li class="li-set"><a class="a-set"
-                                              href="#">Pay Online & get free shipping.</a></li> 
-                    </ul>
-                </div>
-            </div>
-            <div class="navbar navbar-default yamm" role="navigation" id="navbar">
-        <div class="container">
-            <div class="navbar-header">
 
-                <a class="navbar-brand home" href="index.html" data-animate-hover="bounce">
-                    <img src="logo.jpg" alt="Vastar logo" class="hidden-xs logo">
-                    <img src="logo%20small.jpg" alt="vastar logo" class="visible-xs"><span class="sr-only">homepage</span>
-                </a>
-                <div class="navbar-buttons">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
-                        <span class="sr-only">Toggle navigation</span>
-                        <i class="fa fa-align-justify"></i>
-                    </button>
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search">
-                        <span class="sr-only">Toggle search</span>
-                        <i class="fa fa-search"></i>
-                    </button>
-                    
-                    <a class="btn btn-default navbar-toggle" href="basket.html">
-                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs"> cart</span>
-                    </a>
-                   <!-- <a class="btn btn-default navbar-toggle" href="#">
-                        <i class="fa fa-pencil"></i>  <span class="hidden-xs">Sign up</span>
-                    </a>-->
+<link rel="stylesheet" href="checkout_main.css" type="text/css" >
 
-                    <a class="btn btn-default navbar-toggle" data-target="#login-modal" data-toggle="modal">
-                        <i class="fa fa-user"></i>  <span class="hidden-xs">Login</span>
-                    </a>
-
-                </div>
-            </div>
-            <!--/.navbar-header finish-->
-<!--navbar with dropdown----------------------------------------------->
-            <div class="navbar-collapse collapse" id="navigation">
-
-                <ul class="nav navbar-nav navbar-left ">
-                    <li><a href="front.html" class="adjust">Home</a>
-                    </li>
-                    <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle adjust">Men <b class="caret"></b></a>
-                       <!-- <ul class="dropdown-menu">
-                            <li>
-                                <div class="yamm-content">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <h5>Clothing</h5>
-                                            <ul>
-                                                <li><a href="category.html">T-shirts</a>
-                                                </li>
-                                                <li><a href="category.html">Shirts</a>
-                                                </li>
-                                                <li><a href="category.html">Pants</a>
-                                                </li>
-                                                <li><a href="category.html">Accessories</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <h5>Shoes</h5>
-                                            <ul>
-                                                <li><a href="category.html">Trainers</a>
-                                                </li>
-                                                <li><a href="category.html">Sandals</a>
-                                                </li>
-                                                <li><a href="category.html">Hiking shoes</a>
-                                                </li>
-                                                <li><a href="category.html">Casual</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                  
-                                          <div class="col-sm-4">
-                                        <div class="banner">
-                                                <a href="#">
-                                                    <img src="men3.jpg" class="img img-responsive " alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                              
-                            </li>
-                        </ul>-->
-                    </li>
-<!--Ladies-->
-                    <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle adjust" >
-                            Women<b class="caret"></b></a>
-                      <!--  <ul class="dropdown-menu">
-                            <li>
-                                <div class="yamm-content">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <h5>Clothing</h5>
-                                            <ul>
-                                                <li><a href="category.html">T-shirts</a>
-                                                </li>
-                                                <li><a href="category.html">Shirts</a>
-                                                </li>
-                                                <li><a href="category.html">Pants</a>
-                                                </li>
-                                                <li><a href="category.html">Accessories</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <h5>Shoes</h5>
-                                            <ul>
-                                                <li><a href="category.html">Trainers</a>
-                                                </li>
-                                                <li><a href="category.html">Sandals</a>
-                                                </li>
-                                                <li><a href="category.html">Hiking shoes</a>
-                                                </li>
-                                                <li><a href="category.html">Casual</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                      
-                                    
-
-                                        <div class="col-sm-4">
-                                            <div class="banner">
-                                                <a href="#">
-                                                    <img src="banner2.jpg" class="img img-responsive" alt="">
-                                                </a>
-                                             </div>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                             
-                            </li>
-                        </ul>-->
-                    </li>
-
-                    <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle adjust" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Others <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <div class="yamm-content">
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <h5>Shop</h5>
-                                            <ul>
-                                                <li><a href="index.html">Homepage</a>
-                                                </li>
-                                               
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <h5>User</h5>
-                                            <ul>
-                                                <li><a href="register.html">Register / login</a>
-                                                </li>
-                                                
-                                            </ul>
-                                        </div>
-                                        
-                                        <div class="col-sm-3">
-                                            <h5>Pages and blog</h5>
-                                            <ul>
-                                                
-                                                <li><a href="faq.html">FAQ</a>
-                                                </li>
-                                                
-                                                <li><a href="contact.html">Contact</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-
-            </div>
-            <!--/.nav-collapse -->
-
-            <div class="navbar-buttons">
-                 <div class="navbar-collapse collapse right" id="search-not-mobile">
-                    <button type="button" class="btn navbar-btn btn-primary" data-toggle="collapse" data-target="#search">
-                        <span class="sr-only">Toggle search</span>
-                        <i class="fa fa-search"></i>
-                    </button>
-                </div>
-
-                <div class="navbar-collapse collapse right" id="basket-overview">
-                    <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">Cart</span></a>
-                </div>
-                <!--/.nav-collapse -->
-                
-
-               
-              <!--  <div class="navbar-collapse collapse right" id="signup-overview">
-                    <a href="#" class="btn btn-primary navbar-btn"><i class="fa fa-pencil"></i><span class="hidden-sm">Sign up</span></a>
-                </div>-->
-                
-                <!--signup -->
-                
-                
-                
-                 <div class="navbar-collapse collapse right" id="basket-overview">
-                     <a  class="btn btn-primary navbar-login" onclick="return display()" data-toggle="modal" data-target="#login-modal"><i class="fa fa-user"></i><span class="hidden-sm">Login</span></a>
-                      </div>
-                
-<!----------login complete----------------------------------------------------->                
-                
-                 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title h4-color" id="Login">Customer login
-                    </h4>
-                    </div>
-                    <div class="modal-body">
-                        <form action="customer-orders.html" method="post">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="email-modal" placeholder="email">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" id="password-modal" placeholder="password">
-                            </div>
-
-                            <p class="text-center">
-                                <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
-                            </p>
-
-                        </form>
-
-                        <p class="text-center text-muted">Not registered yet?</p>
-                        <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a>! </p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-                
-<!----------------------------------------login done--------------------------->                
-                
-                
-
-                
-                
-                
-                
-                </div>
-
-            <div class="collapse" id="search">
-
-                <form class="navbar-form" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                        <span class="input-group-btn">
-
-			<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-
-		    </span>
-                    </div>
-                </form>
-
-            </div>
-            <!--nav- -->
-
-        </div>
-        <!-- /.container end -->
-    </div>
-    <!-- /#navbar -->
-           
-							</div>
-        
         <div id="all">
 
         <div id="content">
@@ -323,59 +28,51 @@
                     <ul class="breadcrumb">
                         <li><a href="#">Home</a>
                         </li>
-                        <li>Checkout</li> 
+                        <li>Checkout</li>
                     </ul>
                 </div>
                  <div class="col-md-8" id="checkout">
 
                     <div class="box">
-                        <form method="post" action="checkout2.html">
+                        <form action="/purchase" method="POST">
+
                             <h1>Checkout</h1>
                             <ul class="nav nav-pills nav-justified">
-                                <li class="active"><a href="#"><i class="fa fa-map-marker"></i><br>Delivery Address</a>
+                                <li class="active"><a href="#"><i class="fa fa-map-marker"></i><br>Net Banking</a>
                                 </li>
-                                <li class="disabled"><a href="#"><i class="fa fa-inr"></i><br>Payment</a>
+                                <li class=""><a href="/checkoutset"><i class="fa fa-inr"></i><br>COD</a>
                                 </li>
-                                
+
                             </ul>
-                      
+
                             <div class="content">
                                 <div class="row">
-                               
+
                                    <div class="col-sm-6 col-md-4">
                                        <div class="form-group">
                                            <legend>Pin Code<sup>*</sup></legend>
-                                           <input type="number"  class="input-border">
-                               
-                                
+                                           <input type="number" id="pin" name="pin" onkeydown="pincall(document.getElementById('pin').value)" class="input-border" required>
+
                             </div>
                             </div>
                                     </div>
-                                <div class="row">
-                                     <div class="col-sm-6 col-md-4">
-                                       <div class="form-group">
-                                           <legend>Locality/Town<sup>*</sup></legend>
-                                           <input type="text"  class="input-border">
-                               
-                                
-                            </div>
-                            </div>
-                            </div>
+
                                 <div class="row">
                                      <div class="col-sm-6 col-md-4">
                                        <div class="form-group">
                                            <legend>City/District<sup>*</sup></legend>
-                                           <input type="text"  class="input-border" required>
-                               
-                                
+                                           <input type="text" name="city" class="input-border" required>
+
+
                             </div>
                             </div>
                                     <div class="col-sm-6 col-md-4">
                                        <div class="form-group">
                                            <legend>State<sup>*</sup></legend>
-                                           <input type="text"  class="input-border" required>
-                               
-                                
+                                           <input type="text" name="state" class="input-border" required>
+                                           <input type="hidden" name="query" value="<%= data.total %>">
+                                           <input type="hidden" name="email" value="<%= user.email %>">
+
                             </div>
                             </div>
                             </div>
@@ -383,9 +80,9 @@
                                      <div class="col-sm-6 col-md-4">
                                        <div class="form-group">
                                            <legend>Name<sup>*</sup></legend>
-                                           <input type="text"  class="input-border" required>
-                               
-                                
+                                           <input type="text" name="name" class="input-border" required>
+
+
                             </div>
                                     </div>
                                 </div>
@@ -393,9 +90,9 @@
                                      <div class="col-sm-6 col-md-6">
                                        <div class="form-group">
                                            <legend>Address<sup>*</sup></legend>
-                                           <input type="text"  class="input-border2" required>
-                               
-                                
+                                           <input type="text" name="address" class="input-border2" required>
+                                            <input type="hidden" value="ONLINE!!" name="payme">
+
                             </div>
                                     </div>
                                 </div>
@@ -403,9 +100,9 @@
                                      <div class="col-sm-6 col-md-6">
                                        <div class="form-group">
                                            <legend>Line 1<sup>*</sup></legend>
-                                           <input type="text"  class="input-border2" required>
-                               
-                                
+                                           <input type="text" name="address1"  class="input-border2" required>
+
+
                             </div>
                                     </div>
                                 </div>
@@ -413,52 +110,68 @@
                                      <div class="col-sm-6 col-md-4">
                                        <div class="form-group">
                                            <legend>Phone Number<sup>*</sup></legend>
-                                           <input type="tel"  class="input-border" required>
-                               
-                                
+                                           <input type="tel" name="phone" class="input-border" required>
+                                           <input type="hidden" value="<%= data.total %>" name="totalo">
+
                             </div>
                                     </div>
                                 </div>
-                                <div class="checkbox">
-                                    <label ><input type="checkbox" value="" ><p class="check-box">Make this my default address</p></label>
-</div>
+
                             </div>
                            <div class="box-footer">
                                 <div class="pull-left">
-                                    <a href="#" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back to basket</a>
+                                    <a href="/cart" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back to basket</a>
                                 </div>
                                 <div class="pull-right">
-                                    <button type="submit" class="btn btn-primary">Continue<i class="fa fa-chevron-right"></i>
-                                    </button>
+
+                                  <script
+                                      src="https://checkout.razorpay.com/v1/checkout.js"
+                                      data-key="rzp_test_SbMRoudvvusfuG"
+                                      data-amount="<%= data.total*100 %>"
+                                      data-buttontext="Pay with Razorpay"
+                                      data-name="<%= user.firstname %>"
+                                      data-description="Purchase Description"
+                                      data-image="https://your-awesome-site.com/your_logo.jpg"
+                                      data-prefill.name="heloooooooooo"
+                                      data-prefill.email="<%= user.email %>"
+                                      data-theme.color="#F37254"
+                                  ></script>
+
+
                                 </div>
+
                             </div>
-                        </form>
+
+
+
+
+
                      </div>
                 </div>
-                
+
                 <div class="col-md-4">
 
                     <div class="box" id="order-summary">
                         <div class="box-header">
                             <h3>Order summary</h3>
                         </div>
-                       
+
 
                         <div class="table-responsive">
                             <table class="table">
                                 <tbody>
                                     <tr>
                                         <td>Order Total</td>
-                                        <th> ₹00.00</th>
+                                        <th> ₹<%= data.total %></th>
                                     </tr>
                                     <tr>
                                         <td>Delivery</td>
                                         <th> ₹00.00</th>
                                     </tr>
-                                 
+
                                     <tr class="total">
                                         <td>Total Payable</td>
-                                        <th> ₹00.00</th>
+                                        <th> ₹<%= data.total %></th>
                                     </tr>
                                 </tbody>
                             </table>
