@@ -52,22 +52,29 @@
 					</div>
 											<div class="clearfix"> </div>
                       <div class="occasional">
-          <h5 class="myheadset">Sizes :</h5>
+          <h5 class="myheadset">Sizes Available :</h5>
 <form action="/addToCart" method="post">
           <div class="colr ert col-md-1">
-
+            <% if(data.Squantity>0){ %>
             <label class="radio"><input type="radio" name="r1" value="S" checked><i></i>(S)</label>
+            <% } %>
           </div>
           <div class="colr col-md-1">
+            <% if(data.Mquantity>0){ %>
             <label class="radio"><input type="radio" name="r1" value="M"><i></i>(M)</label>
+            <% } %>
           </div>
 
 
           <div class="colr col-md-1">
+            <% if(data.Lquantity>0){ %>
             <label class="radio"><input type="radio" name="r1" value="L"><i></i>(L)</label>
+            <% } %>
           </div>
           <div class="colr col-md-1">
+            <% if(data.XLquantity>0){ %>
             <label class="radio"><input type="radio" name="r1" value="XL"><i></i>(XL)</label>
+            <% } %>
           </div>
 
 

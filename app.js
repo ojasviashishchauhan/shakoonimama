@@ -98,6 +98,6 @@ app.use(function (req, res, next) {
 
 
 
-var server=app.listen(3600,function(){
+var server=app.listen(3000,function(){
   console.log('server running on 3000');
 });

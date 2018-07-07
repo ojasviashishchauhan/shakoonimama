@@ -14,9 +14,10 @@
   <div class="product">
     <h3>Product</h3>
   </div>
-  <div class="product">
+  <div class="size">
     <h3>Size</h3>
   </div>
+
   <div class="quantity">
     <h3>Quantity</h3>
   </div>
@@ -29,7 +30,7 @@
 
 <% for(var i = 0; i < foundCart.items.length; i++ ){ %>
 <div class="items">
-
+<% if (foundCart.items[i].item) { %>
 
   <div class="item1">
     <div class="close1">
@@ -40,9 +41,17 @@
       <div class="title1">
         <p class="p-cart"><%= foundCart.items[i].item.name %></p>
       </div>
-      <div class="">
+      <div class="size1">
         <form>
-                        <p><%= foundCart.items[i].size %></p>
+          <% var x= foundCart.items[i].size; if(x=='S' && foundCart.items[i].item.Squantity > 0){ %>
+                        <p class="p-size label label-primary"><%= foundCart.items[i].size %></p>
+                        <% }else if(x=='M' && foundCart.items[i].item.Mquantity > 0){ %>
+                          <p class="p-size label label-primary"><%= foundCart.items[i].size %></p>
+                          <% }else if(x=='L' && foundCart.items[i].item.Lquantity > 0){ %>
+                            <p class="p-size label label-primary"><%= foundCart.items[i].size %></p>
+                            <% }else if(x=='XL' && foundCart.items[i].item.XLquantity > 0){ %>
+                              <p class="p-size label label-primary"><%= foundCart.items[i].size %></p>
+                              <% } %>
         </form>
       </div>
       <div class="quantity1">
@@ -53,7 +62,9 @@
       <div class="price1">
         <p>Rs.<%= foundCart.items[i].price %></p>
       </div>
-
+      <% }else{ %>
+        <h3>Item Discontinued!!! Please Remove it  </h3>
+        <% } %>
       <div class="clear"></div>
     </div>
     <div class="checkout-remove btn-xs">

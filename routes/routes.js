@@ -250,6 +250,31 @@ var totalo = req.body.totalo;
     y++;
     v[y]=it.size;
     y++;
+    console.log(it.item);
+    Detail.findById(it.item._id, function(err,data){
+      if(err){
+        res.render('error.html');
+        console.log(err);
+      }else{
+
+        console.log('size deleted by 1');
+        data.Quantity-=1;
+        if(it.size=='S'){
+          data.Squantity-=1;
+        }else if(it.size=='M'){
+          data.Mquantity-=1;
+        }else if(it.size=='L'){
+          data.Lquantity-=1;
+        }else if(it.size=='XL'){
+          data.XLquantity-=1;
+        }
+      }
+      data.save(function(err){
+        if (err) return next(err);
+
+      });
+      return;
+  });
     orderd.items.push({
       name:it.item.Name,
       price: parseFloat(it.item.SellingPrice),
@@ -295,6 +320,7 @@ var d= v.toString();
         if (err) return next(err);
         return;
       });
+
       ///lets email stuff
 
         var transporter = nodemailer.createTransport({
@@ -309,7 +335,7 @@ var d= v.toString();
 
       var mailOptions = {
         from: 'hnh.tees@gmail.com',
-        to: 'ojaschauhan44@gmail.com',
+        to: 'nimittantia77@gmail.com',
         subject: 'New Order here',
         text: d,
       };

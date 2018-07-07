@@ -59,6 +59,11 @@ body a {
     width: 55%;
     margin: 0 auto;
 }
+.p-size
+{
+  color: black;
+  font-weight: bolder;
+}
 
 /*h1 {
     text-align: center;
@@ -75,11 +80,17 @@ body a {
     border-radius: 5px;
 }
 .product {
-    width: 65%;
+    width: 40%;
     float: left;
 }
 .product h3 {
     padding-left: 20px;
+}
+.size {
+    width:25%;
+    float: left;
+    text-align: center;
+
 }
 .quantity {
     width: 15%;
@@ -87,7 +98,7 @@ body a {
     text-align: center;
 }
 .price {
-    width: 20%;
+    width: 19%;
     float: left;
     text-align: center;
 }
@@ -133,11 +144,16 @@ body a {
 }
 
 .title1, .title2, .title3 {
-    width: 45%;
+    width: 30%;
     float: left;
 }
+.size1{
+  width: 10%;
+  float: left;
+  text-align: center;
+}
 .quantity1, .quantity2, .quantity3 {
-    width: 15%;
+    width: 20%;
     float: left;
     text-align: center;
 }
@@ -558,17 +574,45 @@ body a {
 }
 
 @media screen and (max-width: 360px) {
+  .main-bar h3 {
+      font-size: 10px;
+  }
+  .product {
+      width: 30%;
+  }
+  .quantity {
+      width: 20%;
+
+  }
+  .size{
+    width:10%;
+  }
+  .price{
+    width: 39%;
+  }
+  .items {
+      padding: 20px 0px;
+  }
     .title1, .title2, .title3 {
-        width: 43%;
+        width: 20%;
     }
     .title1 p, .title2 p, .title3 p {
         font-size: 12px;
     }
     .quantity1, .quantity2, .quantity3 {
-        text-align: left;
+
+        text-align:left;
+
+
     }
+    .size1{
+      width:40%;
+
+
+    }
+
     .price1, .price2, .price3 {
-        width: 22%;
+        width: 13%;
     }
     .price1 p, .price2 p, .price3 p {
         margin-right: 20px;
@@ -580,23 +624,33 @@ body a {
 
 @media screen and (max-width: 320px) {
     .product {
-        width: 55%;
+        width: 25%;
     }
     .img-set {
-        padding-top: 10px;
+        padding-top: 8px;
     }
     .quantity {
-        width: 25%;
+        width:15%;
+        text-align: center;
+    }
+    .size{
+      width: 10%;
+    }
+    .price{
+      width: 50%;
     }
     .title1, .title2, .title3 {
-        width: 40%;
-    }
-    .price1, .price2, .price3 {
         width: 25%;
     }
+    .size1{
+      width:35%;
+    }
+    .price1, .price2, .price3 {
+        width: 15%;
+    }
     .price1 p, .price2 p, .price3 p {
-        margin-right: 15px;
-        font-size: 15px;
+        margin-right: 60px;
+        font-size: 13px;
     }
     .checkout-btn a {
         margin-right: 5px;
