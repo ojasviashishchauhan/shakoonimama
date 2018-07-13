@@ -1,20 +1,4 @@
 <% include header.html %>
-<script>
-  function pincall(x){
-
-    $.get("localhost:", function(x){
-   //contents variable now contains the contents of the textfile as string
-
-   //check if file contains the word Hello
-   var hasString = contents.includes("Hello");
-
-   //outputs true if contained, else false
-   console.log(hasString);
-})
-  }
-
-
-</script>
 
 
 <link rel="stylesheet" href="checkout_main.css" type="text/css" >
@@ -51,7 +35,7 @@
                                    <div class="col-sm-6 col-md-4">
                                        <div class="form-group">
                                            <legend>Pin Code<sup>*</sup></legend>
-                                           <input type="number" id="pin" name="pin" onkeydown="pincall(document.getElementById('pin').value)" class="input-border" required>
+                                           <input type="number" id="pin" name="pin" onblur="" class="input-border" required>
 
                             </div>
                             </div>

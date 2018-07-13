@@ -268,3 +268,30 @@ color: #555555;
   letter-spacing: 1px;
   font-weight: 600;
 }
+
+.snipcart-details_stock {
+    text-align: center;
+	margin:0.5em auto 1em;
+    width:77%;
+}
+.btn-danger.my-cart-btn:focus {
+    outline: none;
+}
+.snipcart-details_stock input.button {
+    font-size: 13px;
+    color: #fff;
+    background: blue;
+    text-decoration: none;
+    position: relative;
+    border: none;
+    border-radius: 0;
+    width: 100%;
+    text-transform: uppercase;
+    padding: .5em 0;
+    outline: none;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+.agile_top_brand_left_grid1:hover .snipcart-details_stock input.button,.snipcart-details_stock input.button:hover{
+    background:blue;
+}

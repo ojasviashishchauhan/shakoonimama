@@ -10,7 +10,7 @@ html { overflow-x: hidden;
 
 .ul-set
 {
-    
+
     float: right;
 }
 .li-set
@@ -34,8 +34,8 @@ html { overflow-x: hidden;
     height: 80px;
     position: relative;
     right: 60px;
-    top: 
-    
+    top:
+
 }
 /*navigation bar adjust*/
 .adjust
@@ -58,27 +58,27 @@ html { overflow-x: hidden;
     /*color: #4fbfa8;*/
     color: #428BCA;
 
-   
+
     font-weight: 700;
-   
-  
+
+
 font-size: 3em;
-   
+
     display: block;
     margin: 0 auto;
      font-family: 'Acme';
 
-    
+
 }
 .h2-color1
 {
     text-align: center;
     color:dimgrey;
 
-   
+
     font-weight: 700;
 
-  
+
 font-size: 3em;
     width: 40%;
     display: block;
@@ -86,17 +86,17 @@ font-size: 3em;
     padding: auto;
      font-family: 'Allura';
 
-    
+
 }
 .h5-color
 {
     text-align: center;
     color: black;
-   
+
     font-weight: 100;
-  
+
 font-size: 15px;
-  
+
     display: block;
     margin: 0 auto;
     font-family: cursive;
@@ -123,7 +123,7 @@ font-size: 15px;
     font-family: 'Caveat Brush';
     font-size:2.5em;
     font-weight: 700;
-    
+
 }
 .text-style2
 {
@@ -201,7 +201,7 @@ input[type="radio"]:checked + label span.radio::after {
     height:40%;
     border: 4px solid white;
 
-    
+
 }
 .p-set
 {
@@ -211,8 +211,8 @@ input[type="radio"]:checked + label span.radio::after {
     color: black;
      font-family: 'Oswald';
     margin: 10px;
-    
-    
+
+
 }
 .pic-head
 {
@@ -221,8 +221,8 @@ input[type="radio"]:checked + label span.radio::after {
     font-size: 30px;
      font-family: 'Oswald';
     margin: 10px;
-    
-    
+
+
 }
 
 .rate-set2
@@ -282,7 +282,7 @@ input[type="radio"]:checked + label span.radio::after {
   font-weight: 400;
   src: local('Allura Regular'), local('Allura-Regular'), url(https://fonts.gstatic.com/s/allura/v6/9oRPNYsQpS4zjuA_iwgW.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}  
+}
     /* latin-ext */
 @font-face {
   font-family: 'Aladin';
@@ -339,7 +339,7 @@ input[type="radio"]:checked + label span.radio::after {
   src: local('Acme Regular'), local('Acme-Regular'), url(https://fonts.gstatic.com/s/acme/v7/RrQfboBx-C5_XxrBbg.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-    
+
 /*****trending design***/////////
 .thumbnail:hover
 {
@@ -355,15 +355,15 @@ input[type="radio"]:checked + label span.radio::after {
 {
     width: 45px;
     height:45px;
-  
+
 }
 .bike-icon
 
-    
+
 {
     width:30px;
     height:30px;
-     
+
 }
 
 .delivery-text
@@ -394,12 +394,12 @@ input[type="radio"]:checked + label span.radio::after {
 
 .figure {
   float: right;
-  
+
   text-align:left;
   font-style: italic;
   font-size:20px;
   text-indent: 0;
- 
+
   margin: 0.5em;
   padding: 0.5em;
 }
@@ -408,7 +408,7 @@ input[type="radio"]:checked + label span.radio::after {
     background-image: url("img_girl.jpg");
 
     /* Full height */
-    height: 40%; 
+    height: 40%;
     width: 100%;
 
     /* Center and scale the image nicely */
@@ -467,7 +467,7 @@ input[type="radio"]:checked + label span.radio::after {
 }
 .special-right h4{
     line-height: 1.5em;
-  
+
     color: #fff;
 	font-family: 'Averia Sans Libre';
     font-size: 30px;
@@ -478,7 +478,7 @@ input[type="radio"]:checked + label span.radio::after {
     font-family: 'Baumans';
     font-size: 19px;
     color: #000000;
-   
+
 	font-weight: 400;
 }
 .special-right.l-left p {
@@ -595,7 +595,7 @@ figure.effect-bubba:hover p {
 .cart-set
 {
     padding-top: 1em;
-    
+
 }
 .change-color
 {
@@ -616,9 +616,13 @@ figure.effect-bubba:hover p {
 .p-change
 {
     font-weight: 700;
+    font-size:0.8em;
 }
 .cart-set1
 {
     border-radius: 8px;
 }
-
+.h-change
+{
+  font-size:1em;
+}

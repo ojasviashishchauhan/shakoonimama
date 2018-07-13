@@ -725,6 +725,7 @@ figure.effect-roxy figcaption::before {
 	right: 30px;
 	bottom: 30px;
 	left: 30px;
+
     border: 4px solid #fff;
 	content: '';
 	opacity: 0;
@@ -749,6 +750,7 @@ figure.effect-roxy h3 {
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 5px;
+	
 }
 figure.effect-roxy p {
 	opacity: 0;
@@ -756,6 +758,7 @@ figure.effect-roxy p {
 	transition: opacity 0.35s, transform 0.35s;
 	-webkit-transform: translate3d(-10px,0,0);
 	transform: translate3d(-10px,0,0);
+
 }
 
 figure.effect-roxy:hover img,.agileinfo_banner_bottom_grid_three_left:hover img{
@@ -770,6 +773,7 @@ figure.effect-roxy:hover p,.agileinfo_banner_bottom_grid_three_left:hover figcap
 	opacity: 1;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
+	font-size: 1em;
 }
 
 .wthree_banner_bottom_grid_three_left1 {
@@ -1901,7 +1905,7 @@ color: #545454;
 /*-- //coupons --*/
 /*-- /about --*/
 .page-head_agile_info_w3l {
-    background: url(../images/inner1.jpg) no-repeat center;
+    background: url(contact.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -3441,10 +3445,8 @@ p.w3ls_para {
 		margin: 5em 0 0;
 		width: 90%;
 	}
-	.logo_agile h1 a {
-		letter-spacing: 1px;
-		font-size: 1.4em;
-	}
+
+
 	i.fa.fa-shopping-bag.top_logo_agile_bag {
 		position: absolute;
 		font-size: 17px;

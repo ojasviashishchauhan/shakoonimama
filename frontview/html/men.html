@@ -1,4 +1,6 @@
 <% include header.html %>
+<link href="men_main.css" type="text/css">
+
     <br>
         <div>
         <img src="catban-020180307111421.jpg" class="image-slider img-responsive">
@@ -116,7 +118,7 @@
                             <h4><%= data[i].Name %></h4>
                             <div class="info-product-price">
                               <span class="item_price">₹<%= data[i].SellingPrice %></span>
-                              <del>Rs500</del>
+                              <del>Rs599</del>
                             </div>
 
                             <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
@@ -126,7 +128,13 @@
                                           <input id="prodId" name="priceValue" type="hidden" value="<%= data[i].SellingPrice %>">
                                           <input id="prodId" name="quantity" type="hidden" value="1">
                                           <!--<input type="submit" class="btn btn-color btn-block" name="addToCart" value="Add to cart"<i class="fa fa-shopping-cart"></i>-->
+                                          <% if(data[i].Quantity>0) { %>
                                           <input type="submit" name="submit" value="Buy Now" class="button">
+                                          <% }else{ %>
+                                            <div class="snipcart-details_stock top_brand_home_details item_add single-item hvr-outline-out button2">
+                                          <input type="button" name="out" onclick="alert('THE ITEM IS OUT OF STOCK!! WILL BE BACK SOON!!')" value="!! OUT OF STOCK !!" class="button">
+                                        </div>
+                                            <% } %>
                                         </fieldset>
                                       </form>
                                     </div>

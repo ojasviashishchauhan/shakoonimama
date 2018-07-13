@@ -32,7 +32,9 @@ router.post('/logout',function(req,res){
 
 // Register User
 router.post('/signup', function(req, res){
-
+  if(req.body.password!=req.body.cpassword){
+    res.redirect('/error');
+  }else{
     User.findOne({ email: req.body.email }, function(err, existingUser) {
                // does the user already exist?
                if (existingUser) {
@@ -94,7 +96,7 @@ router.post('/signup', function(req, res){
              }
            });
 
-
+}
 });
 
 

@@ -32,6 +32,12 @@ const nodemailer = require('nodemailer');
 router.get('/error',function(req, res){
   res.render('error.html',{user:req.user});
 });
+router.get('/ourpolicies',function(req, res){
+  res.render('ourpolicies.html',{user:req.user});
+});
+router.get('/pricing',function(req, res){
+  res.render('pricing.html',{user:req.user});
+});
 router.get('/profile',function(req, res){
   Order.findOne({owner: req.user._id},function(err,orderd1){
 

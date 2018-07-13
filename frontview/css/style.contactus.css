@@ -1901,25 +1901,26 @@ color: #545454;
 /*-- //coupons --*/
 /*-- /about --*/
 .page-head_agile_info {
-    background: url(contactus.png) no-repeat center;
+    background: url(contact.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
     -moz-background-size: cover;
-    min-height: 200px;
-    padding-top:50px;
+    min-height: 260px;
+    padding-top:60px;
 }
 .page-head_agile_info h3 {
     color: #fff;
     text-align: center;
     text-transform: uppercase;
-    font-size:3em;
+    font-size:3.5em;
 	font-weight:700;
 	letter-spacing:2px;
+
 }
 .page-head_agile_info  span{
- font-weight:300;
+ font-weight:400;
 }
 ul.w3_short li {
     display: inline-block;
