@@ -339,7 +339,14 @@ input[type="radio"]:checked + label span.radio::after {
   src: local('Acme Regular'), local('Acme-Regular'), url(https://fonts.gstatic.com/s/acme/v7/RrQfboBx-C5_XxrBbg.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-
+/* latin */
+@font-face {
+  font-family: 'Antic Didone';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Antic Didone Regular'), local('AnticDidone-Regular'), url(https://fonts.gstatic.com/s/anticdidone/v6/RWmPoKKX6u8sp8fIWdnDKqDSroEH.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 /*****trending design***/////////
 .thumbnail:hover
 {
@@ -418,15 +425,15 @@ input[type="radio"]:checked + label span.radio::after {
 }
 .set1
 {
-     font-family: 'Aladin';
-    font-size:2.3em;
-    font-weight: 700;
+     font-family: 'Antic Didone';
+    font-size:2.1em;
+    font-weight: 800;
 }
 .set2
 {
-      font-family: 'Aladin';
-    font-size: 1.45em;
-    font-weight: 600;
+      font-family: 'Antic Didone';
+    font-size: 1.35em;
+    font-weight:bold;
 }
 
 
@@ -624,5 +631,74 @@ figure.effect-bubba:hover p {
 }
 .h-change
 {
-  font-size:1em;
+  font-size:1.0em;
+}
+
+
+figure.effect-roxy1 figcaption::after{
+	position:absolute;
+	top: 30px;
+	right: 30px;
+	bottom: 30px;
+	left: 30px;
+
+    border: 4px solid #fff;
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(-20px,0,0);
+	transform: translate3d(-20px,0,0);
+	-ms-transform: translate3d(-20px,0,0);
+	-moz-transform: translate3d(-20px,0,0);
+	-o-transform: translate3d(-20px,0,0);
+}
+
+figure.effect-roxy1 figcaption {
+    padding: 3em;
+    text-align: right;
+
+    border: 13px solid rgba(255, 255, 255, 0.15);
+}
+
+figure.effect-roxy1 h3 {
+    padding: 1.5em 0 .5em;
+    font-size: 1.7em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+}
+figure.effect-roxy1 p {
+	opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(-10px,0,0);
+	transform: translate3d(-10px,0,0);
+
+}
+
+figure.effect-roxy1:hover img,.agileinfo_banner_bottom_grid_three_left:hover img{
+	opacity: 0.7;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+figure.effect-roxy1:hover figcaption::after,
+figure.effect-roxy1:hover p,.agileinfo_banner_bottom_grid_three_left:hover figcaption::after,
+.agileinfo_banner_bottom_grid_three_left:hover p{
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	font-size: 0.8em;
+}
+.myborder
+{
+  position:absolute;
+  top: 30px;
+  right: 30px;
+  bottom: 30px;
+  left: 30px;
+
+    border: 4px solid #fff;
 }

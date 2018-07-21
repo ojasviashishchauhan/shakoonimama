@@ -24,15 +24,22 @@
     "razorpay": "^1.7.1",
     "update-node": "^0.1.0"
   },
-  "name": "project",
+  "name": "shakoonimama",
   "version": "1.0.0",
   "description": "my shopping website",
   "main": "app.js",
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prestart": "sudo mongod --fork --logpath /dev/null",
+    "start": "nodemon app.js",
+    "stop": "sudo killall -15 mongod",
+    "poststart": "start mongo admin --eval \"db.getSiblingDB('admin').shutdownServer()\"",
+    "pretest": "start mongod --dbpath=/var/lib/mongodb",
+    "test": "mocha test",
+    "posttest": "start mongo admin --eval \"db.getSiblingDB('admin').shutdownServer()\""
+
   },
-  "author": "",
+  "author": "Oj",
   "license": "ISC",
   "repository": {
     "type": "git",

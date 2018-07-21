@@ -33,7 +33,7 @@ router.get('/error',function(req, res){
   res.render('error.html',{user:req.user});
 });
 router.get('/ourpolicies',function(req, res){
-  res.render('ourpolicies.html',{user:req.user});
+  res.render('razorcheckout.html',{user:req.user});
 });
 router.get('/pricing',function(req, res){
   res.render('pricing.html',{user:req.user});

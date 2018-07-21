@@ -750,7 +750,7 @@ figure.effect-roxy h3 {
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 5px;
-	
+
 }
 figure.effect-roxy p {
 	opacity: 0;
@@ -773,7 +773,7 @@ figure.effect-roxy:hover p,.agileinfo_banner_bottom_grid_three_left:hover figcap
 	opacity: 1;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
-	font-size: 1em;
+	font-size: 0.8em;
 }
 
 .wthree_banner_bottom_grid_three_left1 {
@@ -5553,5 +5553,15 @@ p.w3ls_para {
 	#PPMiniCart {
       left: 68% !important;
     }
+
+		.modal_body_right.modal_body_right1 {
+			padding: 0;
+			float: right;
+			width: 100%;
+		}
+		.modal_body_right.modal_body_right1 img {
+			width: 10%;
+		}
 }
+
 /*-- //responsive media queries --*/

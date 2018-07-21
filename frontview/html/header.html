@@ -46,7 +46,7 @@
 	<div class="container">
 		<ul>
       <% if (user) { %>
-         <li> <a href="#" data-toggle="modal" data-target="#login-modal"><i class="	fa fa-user" aria-hidden="true" ></i> Welcome : <%=  user.firstname %> <%=user.lastname %>  </a></li>
+         <li> <a  data-toggle="modal" data-target=""><i class="	fa fa-user" aria-hidden="true" ></i> Hello : <%=  user.firstname %></a></li>
          <li> <form action="/logout" method="post">
             <!--<input type="submit" value="Logout-->
             <a href="javascript:void(0)" class="logout"><i class="fa fa-power-off" aria-hidden="true"></i>Logout</a>
@@ -59,7 +59,7 @@
       <li><i class="fa fa-barcode" aria-hidden="true"></i><a href='/termsandconditions'> Terms & Conditions </a> </li>
       <%}%>
 
-			<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">shakoonimama@gmail.com</a></li>
+			<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:nitinsachdeva3672@gmail.com">shakoonimama@gmail.com</a></li>
 		</ul>
 	</div>
 </div>
@@ -144,7 +144,7 @@
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
 					</div>
 						<div class="modal-body modal-body-sub_agile">
-						<div class="col-md-8 modal_body_left modal_body_left1">
+						<div class="col-md-8  modal_body_left modal_body_left1">
 						<h3 class="agileinfo_sign">Sign In <span>Now</span></h3>
 									<form action="/login" method="post">
                      <div class="form-group">
@@ -162,8 +162,8 @@
 														<p><a href="signup" > Don't have an account?</a></p>
 
 						</div>
-						<div class="col-md-4 modal_body_right modal_body_right1">
-							<img src="r5.jpg" alt=" "/>
+						<div class="col-md-4  modal_body_right modal_body_right1">
+							<img src="r5.jpg" alt=" " class="">
 						</div>
 						<div class="clearfix"></div>
 					</div>

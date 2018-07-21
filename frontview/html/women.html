@@ -1,7 +1,7 @@
 <% include header.html %>
 
         <div>
-        <img src="catban-020180307111421.jpg" class="image-slider img-responsive">
+        <img src="as.png" class="image-slider img-responsive">
         </div>
         <br>
 
@@ -12,7 +12,7 @@
 
                 <div class="col-md-12">
                     <ul class="breadcrumb">
-                        <li><a href="#">Home</a>
+                        <li><a >Home</a>
                         </li>
                         <li>Women</li>
                     </ul>
@@ -31,20 +31,18 @@
                                 <li>
                                     <a href="#" class="h1-mycolor">Men <span class="badge pull-right"></span></a>
                                     <ul>
-                                        <li><a href="#">T-shirts</a>
+                                        <li><a>T-shirts</a>
                                         </li>
-                                        <li><a href="#">Casual T-Shirts</a>
-                                        </li>
+
 
                                     </ul>
                                 </li>
                                 <li  >
                                     <a href="#" class="h1-mycolor myactive">Women<span class="badge pull-right"></span></a>
                                     <ul>
-                                        <li><a href="#">T-shirts</a>
+                                        <li><a >T-shirts</a>
                                         </li>
-                                        <li><a href="category">Casual T-shirts</a>
-                                        </li>
+
 
                                     </ul>
                                 </li>
@@ -74,7 +72,7 @@
                                     <form class="form-inline">
                                         <div class="col-md-6 col-sm-6">
                                             <div class="products-number">
-                                                  <a href="#" class="btn  btn-sm btn-color">1</a>  <a href="#" class="btn btn-default btn-sm">2</a>
+                                                  <a href="#" class="btn  btn-sm btn-color">1</a>
                                             </div>
                                         </div>
 
@@ -101,14 +99,14 @@
                                           <div class="men-thumb-item">
                                             <img src="<%= data[i].image1 %>" alt="" class="pro-image-front img-responsive">
                                             <img src="<%= data[i].image2 %>" alt="" class="pro-image-back img-responsive">
-                                              <div class="men-cart-pro">
+                                            <!--  <div class="men-cart-pro">
                                                 <form action="/view" method="post">
                                                 <div class="inner-men-cart-pro">
                                                   <input id="prodId" name="prodId" type="hidden" value="<%= data[i]._id %>">
                                                   <input value="view details" name="view" type="submit" class="link-product-add-cart">
                                                 </div>
                                               </form>
-                                              </div>
+                                            </div>-->
                                               <span class="product-new-top">New</span>
 
                                           </div>
@@ -126,7 +124,13 @@
                                                           <input id="prodId" name="priceValue" type="hidden" value="<%= data[i].SellingPrice %>">
                                                           <input id="prodId" name="quantity" type="hidden" value="1">
                                                           <!--<input type="submit" class="btn btn-color btn-block" name="addToCart" value="Add to cart"<i class="fa fa-shopping-cart"></i>-->
-                                                          <input type="submit" name="submit" value="Add to cart" class="button">
+                                                          <% if(data[i].Quantity>0) { %>
+                                                          <input type="submit" name="submit" value="Buy Now" class="button">
+                                                          <% }else{ %>
+                                                            <div class="snipcart-details_stock top_brand_home_details item_add single-item hvr-outline-out button2">
+                                                          <input type="button" name="out" onclick="alert('THE ITEM IS OUT OF STOCK!! WILL BE BACK SOON!!')" value="!! OUT OF STOCK !!" class="button">
+                                                        </div>
+                                                            <% } %>
                                                         </fieldset>
                                                       </form>
                                                     </div>

@@ -35,3 +35,25 @@
     padding-left: 0;
 }
 }
+*/
+
+@media (max-width: 320px ){
+  .modal_body_right.modal_body_right1 {
+    padding: 0;
+    float: right;
+    width: 0%;
+  }
+  .modal_body_right.modal_body_right1 img {
+    width: 0%;
+  }
+}
+@media (max-width: 360px){
+  .modal_body_right.modal_body_right1 {
+    padding: 0;
+    float: right;
+    width: 0%;
+  }
+  .modal_body_right.modal_body_right1 img {
+    width: 0%;
+  }
+}

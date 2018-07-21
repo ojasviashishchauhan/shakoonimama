@@ -92,7 +92,7 @@
                                        <div class="form-group">
                                            <legend>Phone Number<sup>*</sup></legend>
                                            <input type="tel" name="phone" class="input-border" required>
-                                            <input type="hidden" value="<%= data.total +30 %>" name="totalo">
+                                            <input type="hidden" value="<%= data.total +49 %>" name="totalo">
 
                             </div>
                                     </div>
@@ -100,18 +100,19 @@
 
                             </div>
                                 <div class="checkbox">
-                                    <label ><p class="check-box">**Extra Rs.30 for COD</p></label>
+                                    <label ><p class="check-box">**Extra Rs.49 for COD</p></label>
 </div>
+<div class="box-footer">
+     <div class="pull-left">
+         <a href="/cart" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back to basket</a>
+     </div>
+     <div class="pull-right">
+         <button type="submit" class="btn btn-primary">Confirm Order!!<i class="fa fa-chevron-right"></i>
+         </button>
+     </div>
+ </div>
                             </div>
-                           <div class="box-footer">
-                                <div class="pull-left">
-                                    <a href="/cart" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back to basket</a>
-                                </div>
-                                <div class="pull-right">
-                                    <button type="submit" class="btn btn-primary">Confirm Order!!<i class="fa fa-chevron-right"></i>
-                                    </button>
-                                </div>
-                            </div>
+
                         </form>
                      </div>
 
@@ -138,7 +139,7 @@
 
                                     <tr class="total">
                                         <td>Total Payable</td>
-                                        <th> ₹₹<%= data.total +30 %></th>
+                                        <th> ₹<%= data.total +49 %></th>
 
                                     </tr>
                                 </tbody>

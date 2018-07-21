@@ -1,149 +1,102 @@
 <% include header.html %>
- <link rel="stylesheet" href="style_cart.css">
+<link href="setcart.css" rel="stylesheet" type="text/css">
 
-<div class="container1">
+<body>
+		<!---header--->
+		<div class="header">
+			<h1>Products In Cart</h1>
+		</div>
 
-<% if (message.length > 0) { %>
-<div class="alert alert-success alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>Removed!</strong> <%= message %>
-</div>
-<% } %>
-<!-- Mainbar-Starts-Here -->
-<div class="main-bar">
-  <div class="product">
-    <h3>Product</h3>
-  </div>
-  <div class="size">
-    <h3>Size</h3>
-  </div>
+		<% if (message.length > 0) { %>
+		<div class="alert alert-success alert-dismissible" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		  <strong>Removed!</strong> <%= message %>
+		</div>
+		<% } %>
+		<!---header--->
+		<!---main--->
+			<div class="main">
+				<div class="main-section">
+					<% for(var i = 0; i < foundCart.items.length; i++ ){ %>
+					<div class="product-section">
+						<% if (foundCart.items[i].item) { %>
+						<div class="product-top">
+							<div class="product-left">
+								<img  src="<%= foundCart.items[i].item.image4 %>" >
+							</div>
+							<div class="product-right">
+								<h2><%= foundCart.items[i].item.Name %></h2>
 
-  <div class="quantity">
-    <h3>Quantity</h3>
-  </div>
-  <div class="price">
-    <h3>Price</h3>
-  </div>
-  <div class="clear"></div>
-</div>
-<!-- //Mainbar-Ends-Here -->
-
-<% for(var i = 0; i < foundCart.items.length; i++ ){ %>
-<div class="items">
-<% if (foundCart.items[i].item) { %>
-
-  <div class="item1">
-    <div class="close1">
-      <!-- Remove-Item --><div class="alert-close1"> </div><!-- //Remove-Item -->
-      <div class="image1">
-        <img src="<%= foundCart.items[i].item.image4 %>" alt="item1" class="img-1">
-      </div>
-      <div class="title1">
-        <p class="p-cart"><%= foundCart.items[i].item.name %></p>
-      </div>
-      <div class="size1">
-        <form>
-          <% var x= foundCart.items[i].size; if(x=='S' && foundCart.items[i].item.Squantity > 0){ %>
-                        <p class="p-size label label-primary"><%= foundCart.items[i].size %></p>
-                        <% }else if(x=='M' && foundCart.items[i].item.Mquantity > 0){ %>
-                          <p class="p-size label label-primary"><%= foundCart.items[i].size %></p>
-                          <% }else if(x=='L' && foundCart.items[i].item.Lquantity > 0){ %>
-                            <p class="p-size label label-primary"><%= foundCart.items[i].size %></p>
-                            <% }else if(x=='XL' && foundCart.items[i].item.XLquantity > 0){ %>
-                              <p class="p-size label label-primary"><%= foundCart.items[i].size %></p>
-                              <% } %>
-        </form>
-      </div>
-      <div class="quantity1">
-        <form>
-                        <p><%= foundCart.items[i].quantity %></p>
-        </form>
-      </div>
-      <div class="price1">
-        <p>Rs.<%= foundCart.items[i].price %></p>
-      </div>
-      <% }else{ %>
-        <h3>Item Discontinued!!! Please Remove it  </h3>
-        <% } %>
-      <div class="clear"></div>
-    </div>
-    <div class="checkout-remove btn-xs">
-    <form action="/remove" method="post">
-        <input type="hidden" name="item" value="<%= foundCart.items[i].id %>">
-        <input type="hidden" name="price" value="<%= foundCart.items[i].price %>">
-    <!--<button type="submit">Remove</button>-->
-    <a href="javascript:void(0)" class="remove">Remove</a>
-  </div>
-  </form>
-  </div>
-
-
-</div>
-<% }%>
-
-<div class="total">
-  <div class="total1">Total Price</div>
-  <div class="total2">Rs.<%= foundCart.total %></div>
-  <div class="clear"></div>
-</div>
-    <div class="checkout">
-      <% if(foundCart.items.length>0){ %>
-
-
-  <div class="checkout-btn">
-    <a href="/checkout">Checkout</a>
-  </div>
-
-
-    <% }else{ %>
-    <div class="clear"> Nothing in CART!! Lets's go SHOPPING!!</div>
-      <% } %>
-</div>
-
-
-</div>
+									<ul class="size">
+										<li>  <% var x= foundCart.items[i].size; if(x=='S' && foundCart.items[i].item.Squantity > 0){ %>
+						                        <p class="p-size label label-primary"><%= foundCart.items[i].size %></p>
+						                        <% }else if(x=='M' && foundCart.items[i].item.Mquantity > 0){ %>
+						                          <p class="p-size label label-primary"><%= foundCart.items[i].size %></p>
+						                          <% }else if(x=='L' && foundCart.items[i].item.Lquantity > 0){ %>
+						                            <p class="p-size label label-primary"><%= foundCart.items[i].size %></p>
+						                            <% }else if(x=='XL' && foundCart.items[i].item.XLquantity > 0){ %>
+						                              <p class="p-size label label-primary"><%= foundCart.items[i].size %></p>
+						                              <% } %></li>
+										<li>Qty: <%= foundCart.items[i].quantity %></li>
+									</ul>
+							</div>
+						</div>
+						<div class="product-middle">
+							<select class="sel">
+								<option value="">1</option>
+								<option value="">2</option>
+								<option value="">3</option>
+								<option value="">4</option>
+								<option value="">5</option>
+							</select>
+						</div>
+						<div class="product-right1">
+							<p>RsRs.<%= foundCart.items[i].price %><p>
+							<div class="close"> </div>
+						</div>
+						<div class="clear"></div>
+						<% } %>
+					</div>
+			<% } %>
+					<div class="product-bottom">
+						<h3>Total: <span>Rs.<%= foundCart.total %></h3>
+						<a href="#">Checkout</a>
+						<div class="clear">
+					</div>
+				</div>
+			</div>
+		</div>
+			<div class="footer">
+		</div>
 
 
 
+		<!---main--->
+</body>
 
 
 
-<script>
-
-$(document).ready(function(){
-   $(document).on("click",".remove",function(){
-     var form = $(this).closest("form");
-     //console.log(form);
-     form.submit();
-   });
+<script>$(document).ready(function(c) {
+	$('.close').on('click', function(c){
+		$('.product-section').fadeOut('slow', function(c){
+	  		$('.product-section').remove();
+		});
+	});
 });
 </script>
-
-
-<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
-	<script>$(document).ready(function(c) {
-		$('.alert-close1').on('click', function(c){
-			$('.close1').fadeOut('slow', function(c){
-		  		$('.close1').remove();
-			});
+<script>$(document).ready(function(c) {
+	$('.close1').on('click', function(c){
+		$('.product1').fadeOut('slow', function(c){
+	  		$('.product1').remove();
 		});
 	});
-	</script>
-	<script>$(document).ready(function(c) {
-		$('.alert-close2').on('click', function(c){
-			$('.close2').fadeOut('slow', function(c){
-		  		$('.close2').remove();
-			});
+});
+</script>
+<script>$(document).ready(function(c) {
+	$('.close2').on('click', function(c){
+		$('.product2').fadeOut('slow', function(c){
+	  		$('.product2').remove();
 		});
 	});
-	</script>
-	<script>$(document).ready(function(c) {
-		$('.alert-close3').on('click', function(c){
-			$('.close3').fadeOut('slow', function(c){
-		  		$('.close3').remove();
-			});
-		});
-	});
-	</script>
-    </body>
-</html>
+});
+</script>

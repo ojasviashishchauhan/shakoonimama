@@ -183,10 +183,12 @@ h1 {
 #advantages {
   text-align: center;
 }
+
 #advantages .box .icon {
   position: absolute;
   font-size: 100px;
   width: 100%;
+
   text-align: center;
   top: -20px;
   left: 0;
