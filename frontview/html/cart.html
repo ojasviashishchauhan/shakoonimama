@@ -1,5 +1,5 @@
 <% include header.html %>
-<link href="setcart.css" rel="stylesheet" type="text/css">
+<link href="setcart.css" type="text/css" rel="stylesheet">
 
 <body>
 		<!---header--->
@@ -20,6 +20,7 @@
 					<% for(var i = 0; i < foundCart.items.length; i++ ){ %>
 					<div class="product-section">
 						<% if (foundCart.items[i].item) { %>
+
 						<div class="product-top">
 							<div class="product-left">
 								<img  src="<%= foundCart.items[i].item.image4 %>" >
@@ -29,41 +30,58 @@
 
 									<ul class="size">
 										<li>  <% var x= foundCart.items[i].size; if(x=='S' && foundCart.items[i].item.Squantity > 0){ %>
-						                        <p class="p-size label label-primary"><%= foundCart.items[i].size %></p>
+						                        <p class="p-size1 label label-success"><%= foundCart.items[i].size %></p>
 						                        <% }else if(x=='M' && foundCart.items[i].item.Mquantity > 0){ %>
-						                          <p class="p-size label label-primary"><%= foundCart.items[i].size %></p>
+						                          <p class="p-size1 label label-success"><%= foundCart.items[i].size %></p>
 						                          <% }else if(x=='L' && foundCart.items[i].item.Lquantity > 0){ %>
-						                            <p class="p-size label label-primary"><%= foundCart.items[i].size %></p>
+						                            <p class="p-size1 label label-success"><%= foundCart.items[i].size %></p>
 						                            <% }else if(x=='XL' && foundCart.items[i].item.XLquantity > 0){ %>
-						                              <p class="p-size label label-primary"><%= foundCart.items[i].size %></p>
+						                              <p class="p-size1 label label-success"><%= foundCart.items[i].size %></p>
 						                              <% } %></li>
 										<li>Qty: <%= foundCart.items[i].quantity %></li>
 									</ul>
 							</div>
+
 						</div>
-						<div class="product-middle">
-							<select class="sel">
-								<option value="">1</option>
-								<option value="">2</option>
-								<option value="">3</option>
-								<option value="">4</option>
-								<option value="">5</option>
-							</select>
+
+					<div class="product-middle">
+
+							<div class="checkout-remove btn-lg">
+							<form action="/remove" method="post">
+									<input type="hidden" name="item" value="<%= foundCart.items[i].id %>">
+									<input type="hidden" name="price" value="<%= foundCart.items[i].price %>">
+							<!--<button type="submit">Remove</button>-->
+							<a href="javascript:void(0)" class="remove">Remove</a>
+
+						</form>
+						</div>
 						</div>
 						<div class="product-right1">
-							<p>RsRs.<%= foundCart.items[i].price %><p>
+							<p>Rs.<%= foundCart.items[i].price %><p>
 							<div class="close"> </div>
 						</div>
 						<div class="clear"></div>
-						<% } %>
+						<% }else{ %>
+			        <h3>Item Discontinued!!! Please Remove it  </h3>
+			        <% } %>
 					</div>
-			<% } %>
+
+					<% } %>
 					<div class="product-bottom">
 						<h3>Total: <span>Rs.<%= foundCart.total %></h3>
-						<a href="#">Checkout</a>
-						<div class="clear">
+							<div class="checkout-btn">
+					      <% if(foundCart.items.length>0){ %>
+
+
+					  <div class="checkout-btn">
+					    <a href="/checkout">Checkout</a>
+					  </div>
+
+
+					    <% }else{ %>
+					    <div class="clear"> Nothing in CART!! Lets's go SHOPPING!!</div>
+					      <% } %>
 					</div>
-				</div>
 			</div>
 		</div>
 			<div class="footer">
@@ -75,8 +93,16 @@
 </body>
 
 
+<script>
+$(document).ready(function(){
+	 $(document).on("click",".remove",function(){
+		 var form = $(this).closest("form");
+		 //console.log(form);
+		 form.submit();
+	 });
+});
 
-<script>$(document).ready(function(c) {
+$(document).ready(function(c) {
 	$('.close').on('click', function(c){
 		$('.product-section').fadeOut('slow', function(c){
 	  		$('.product-section').remove();

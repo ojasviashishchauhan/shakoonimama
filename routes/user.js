@@ -14,11 +14,20 @@ var mongoose = require('mongoose');
 var path= require('path');
 var lowerCase = require('lower-case');
 var passportConf = require('../config/passport');
+var Recaptcha = require('express-recaptcha').Recaptcha;
+//import Recaptcha from 'express-recaptcha'
+var recaptcha = new Recaptcha('6LdzoGUUAAAAAG2puBzjmPVDcfOPTix52CK5brun', '6LdzoGUUAAAAACKXJm1W_tgv5yP0azYe9HIABdZh');
 
 mongoose.connect('mongodb://localhost/uploadFiles');
 
 
-router.post('/login', passport.authenticate('local', {
+router.post('/login',recaptcha.middleware.verify,function(req,res,next){
+   if (!req.recaptcha.error){
+     return next();
+   }else{
+     res.redirect('/error');
+   }
+}, passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/error',
     failureFlash: true
@@ -31,7 +40,10 @@ router.post('/logout',function(req,res){
 });
 
 // Register User
-router.post('/signup', function(req, res){
+router.post('/signup',recaptcha.middleware.verify, function(req, res){
+  if (req.recaptcha.error){
+    res.redirect('/error');
+  }else{
   if(req.body.password!=req.body.cpassword){
     res.redirect('/error');
   }else{
@@ -96,6 +108,7 @@ router.post('/signup', function(req, res){
              }
            });
 
+}
 }
 });
 

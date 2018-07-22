@@ -1,10 +1,18 @@
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
-/* reset */
+.btn-color
+{
+  color: black;
+  font-size: 0.7em;
+  font-weight: 700;
+}
+.btn-xl {
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    width:auto;    //Specify your width here
+}
+
+
+/*
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
 article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
 ol,ul{list-style:none;margin:0px;padding:0px;}
@@ -12,7 +20,7 @@ blockquote,q{quotes:none;}
 blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
 table{border-collapse:collapse;border-spacing:0;}
 /* start editing from here */
-a{text-decoration:none;}
+/*a{text-decoration:none;}*/
 .txt-rt{text-align:right;}/* text align right */
 .txt-lt{text-align:left;}/* text align left */
 .txt-center{text-align:center;}/* text align center */
@@ -27,19 +35,20 @@ nav.vertical ul li{	display:block;}/* vertical menu */
 nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 /*end reset*/
-body{
+/*body{
 	font-family: 'Open Sans', sans-serif;
 	background: #1B1616;
-}
+}*/
 .header {
     text-align: center;
-    margin-top: 4em;
+    margin-top:;
 }
 .header h1 {
-    font-size: 3em;
-    color: #DAEF51;
+    font-size:2em;
+    color:white;
     font-weight: 400;
 	font-family: 'Montserrat', sans-serif;
+
 }
 .main-section {
     width: 42%;
@@ -63,7 +72,7 @@ body{
     border: 1px solid#dfdfdf;
 	background: #fff;
 	border-radius: 5px;
-	position: relative;    
+	position: relative;
 	margin-top: 2em;
 }
 .product-right h2 {
@@ -75,6 +84,7 @@ body{
     font-size: .9em;
     color: #777;
     line-height: 1.7em;
+
 }
 .product-right h5 {
     font-size: .9em;
@@ -117,8 +127,10 @@ ul.size  li:nth-child(2) {
 .product-right1 {
     float: left;
     width: 16.8%;
-    padding: 9.3% .95%;
+    /*padding: 9.3% .95%;*/
+    padding: 9.9% .95%;
     background: #EAEAEA;
+
 }
 .product-left img {
     border-radius: 50px;
@@ -135,7 +147,7 @@ ul.size  li:nth-child(2) {
     outline: none;
 }
 .close,.close1,.close2 {
-    background: url('../images/close.png') no-repeat 0px 0px;
+    background: url('llclose.png') no-repeat 0px 0px;
     cursor: pointer;
     height: 32px;
     position: absolute;
@@ -156,7 +168,7 @@ ul.size  li:nth-child(2) {
     font-size: 1em;
     padding: .5em 1em;
     display: block;
-    width: 11%;
+    width: 16%;
     float: right;
     color: #222;
     margin-top: 1em;
@@ -164,7 +176,7 @@ ul.size  li:nth-child(2) {
 }
 .product-bottom h3 {
     font-size: 1.3em;
-    color: #fff;
+    color: black;
 	 font-family: 'Montserrat', sans-serif;
 }
 .footer {
@@ -232,18 +244,18 @@ ul.size  li:nth-child(2) {
 .product-right1 {
     float: left;
     width: 49%;
-    padding: 9.9% 1.3%;
+    padding: 10.5% 1.3%;
 }
 .product-middle {
     float: left;
     width: 48%;
 }
-.header {
+/*.header {
     text-align: center;
     margin-top: 3em;
-}
+}*/
 .product-bottom a {
-    width: 14%;
+    width: 20%;
 }
 }
 @media (max-width: 480px){
@@ -257,14 +269,14 @@ ul.size  li:nth-child(2) {
 .product-right1 {
     float: left;
     width: 49%;
-    padding: 9.7% 1.7%;
+    padding: 11.4% 1.7%;
 }
 .header h1 {
     font-size: 2.2em;
 }
 .product-bottom a {
 	font-size: .9em;
-    width: 15%;
+    width: 18%;
 }
 .product-bottom h3 {
     font-size: 1.2em;
@@ -272,15 +284,15 @@ ul.size  li:nth-child(2) {
 }
 @media (max-width: 414px){
 .product-bottom a {
-    width: 17%;
+    width: 22%;
 }
 }
 @media (max-width: 375px){
 .product-right1 {
-	padding: 9.8% 1.6%;
+	padding: 11.4% 1.6%;
 }
 .product-bottom a {
-    width: 19%;
+    width: 26%;
 }
 }
 @media (max-width: 320px){
@@ -298,10 +310,10 @@ ul.size  li:nth-child(2) {
     margin-bottom: 1em;
 }
 .product-bottom a {
-    width: 21%;
+    width: 26%;
 }
 .product-right1 {
-    padding: 10% 2.1%;
+    padding: 11.6% 2.1%;
 }
 .product-bottom {
     margin-top: 1em;

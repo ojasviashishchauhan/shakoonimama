@@ -18,6 +18,9 @@ var path= require('path');
 var lowerCase = require('lower-case');
 var mongoose = require('mongoose');
 var db = mongoose.connect('mongodb://localhost/uploadFiles');
+var Recaptcha = require('express-recaptcha').Recaptcha;
+//import Recaptcha from 'express-recaptcha'
+var recaptcha = new Recaptcha('6LdzoGUUAAAAAG2puBzjmPVDcfOPTix52CK5brun', '6LdzoGUUAAAAACKXJm1W_tgv5yP0azYe9HIABdZh');
 
 const fs = require('fs');
 const readline = require('readline');
@@ -45,15 +48,15 @@ router.get('/profile',function(req, res){
 });
 });
 
-router.get('/contact_us',function(req, res){
-  res.render('contact_us.html',{user:req.user});
+router.get('/contact_us',recaptcha.middleware.render,function(req, res){
+  res.render('contact_us.html',{user:req.user,captcha:res.recaptcha});
 });
 
 router.get('/aboutus',function(req, res){
   res.render('aboutus.html',{user:req.user});
 });
 
-router.get('/',function(req,res,next){
+router.get('/', recaptcha.middleware.render,function(req,res,next){
   res.set({
     'Access-Control-Allow-Origin' : '*'
   });
@@ -63,24 +66,27 @@ router.get('/',function(req,res,next){
     console.log(req.user.firstname);
   }
 
-  return res.render('front.html',{user:req.user});
+  return res.render('front.html',{user:req.user,captcha:res.recaptcha});
 
 
 });
 
-router.post('/connect',function(req,res,next){
+router.post('/connect',recaptcha.middleware.verify,function(req,res,next){
+  if (!req.recaptcha.error){
   var contact= new Contact({
     Name:req.body.Name,
     Email:req.body.Email,
     Message:req.body.Message
   });
-
   contact.save(function(err){
 
     if(err)throw err;
     //console.log(err);
     res.redirect('/contact_us');
   });
+}else{
+  res.redirect('/error');
+}
 });
 
 router.post('/rating',passportConf.isAuthenticated,function(req,res,next){
@@ -118,8 +124,8 @@ router.post('/logout',function(req,res){
   res.redirect('/');
 });
 
-router.get('/signup',function(req,res){
-  res.render('signup.html',{user:req.user,message:'Please fill in all Details!!'});
+router.get('/signup', recaptcha.middleware.render,function(req,res){
+  res.render('signup.html',{user:req.user,message:'Please fill in all Details!!',captcha:res.recaptcha});
 });
 
 router.get('/checkout',function(req,res){
