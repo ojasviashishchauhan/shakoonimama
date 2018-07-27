@@ -15,6 +15,7 @@ var users = require('./models/user');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
+
 const helmet = require('helmet');
 app.use(helmet());
 
@@ -96,6 +97,11 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 
 var server=app.listen(3000,function(){

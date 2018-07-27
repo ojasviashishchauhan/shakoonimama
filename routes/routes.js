@@ -27,16 +27,13 @@ const readline = require('readline');
 const {google} = require('googleapis');
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
 const TOKEN_PATH = 'credentials.json';
-
 const nodemailer = require('nodemailer');
-
-
 
 router.get('/error',function(req, res){
   res.render('error.html',{user:req.user});
 });
 router.get('/ourpolicies',function(req, res){
-  res.render('razorcheckout.html',{user:req.user});
+  res.render('ourpolicies.html',{user:req.user});
 });
 router.get('/pricing',function(req, res){
   res.render('pricing.html',{user:req.user});
@@ -54,6 +51,39 @@ router.get('/contact_us',recaptcha.middleware.render,function(req, res){
 
 router.get('/aboutus',function(req, res){
   res.render('aboutus.html',{user:req.user});
+});
+
+router.post('/pinch',function(req, res){
+  console.log(req.body.pin);
+  var go='';
+  var http = require('http');
+var pat="/api/pincode/"+req.body.pin;
+var options = {
+  host: 'postalpincode.in',
+  path: pat,
+};
+
+http.get(options, function(resp){
+
+  resp.on('data', function(chunk){
+    //do something with chunk
+    //var textChunk = chunk.toString('utf8');
+     var result= JSON.parse(chunk);
+    console.log(result.Status);
+    //go=(result.Status).toString('utf8');
+    if(result.Status=='Success'){
+      go="We Got You Covered!!";
+    }else{
+      go="Sorry This is beyond our reach!!";
+    }
+    res.send(go);
+  });
+
+}).on("error", function(e){
+  console.log("Got error: " + e.message);
+  res.send("SOMETHING WENT WRONG!!");
+});
+
 });
 
 router.get('/', recaptcha.middleware.render,function(req,res,next){

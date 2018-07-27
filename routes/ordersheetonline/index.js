@@ -92,22 +92,7 @@ router.post('/purchase',function(req,res){
 
     function listMajors(auth) {
       const sheets = google.sheets({version: 'v4', auth});
-      // sheets.spreadsheets.values.get({
-      //   spreadsheetId: '1QnNX6j6AKmBk2FlKer8mJcHeaFLjJvxnX6qgDHOHjFE',
-      //   range: 'A2:A4',
-      // }, (err, {data}) => {
-      //   if (err) return console.log('The API returned an error: ' + err);
-      //   const rows = data.values;
-      //   if (rows.length) {
-      //     console.log('Name, Major:');
-      //     // Print columns A and E, which correspond to indices 0 and 4.
-      //     rows.map((row) => {
-      //       console.log(`${row[0]}, ${row[4]}`);
-      //     });
-      //   } else {
-      //     console.log('No data found.');
-      //   }
-      // });
+    
       var values = [
       [
         req.body.name,

@@ -45,10 +45,24 @@
 
 					<div class="description">
 						<h5>Check delivery, payment options and charges at your location</h5>
-						 <form action="#" method="post">
-						<input type="text" value="Enter pincode"  required="">
+						 <form  id="pp" method="post">
+						<input type="text" value="Enter pincode" name="pin" id="pin" required>
 						<input type="submit" value="Check">
 						</form>
+            <script>
+            $(function() {
+                $('#pp').submit(function(event) {
+
+                  event.preventDefault(); // Stops browser from navigating away from page
+                  var data={pin: document.getElementById("pin").value};
+                  // build a json object or do something with the form, store in data
+                  $.post('/pinch', data, function(resp) {
+                    alert(resp);
+                    // do something when it was successful
+        });
+    });
+});
+</script>
 					</div>
 											<div class="clearfix"> </div>
                       <div class="occasional">
