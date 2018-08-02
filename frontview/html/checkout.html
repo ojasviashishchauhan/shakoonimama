@@ -1,7 +1,8 @@
 <% include header.html %>
 
+  <link rel="stylesheet" href="checkout_main.css" type="text/css" >
 
-<link rel="stylesheet" href="checkout_main.css" type="text/css" >
+
 
         <div id="all">
 
@@ -35,11 +36,9 @@
                                    <div class="col-sm-6 col-md-4">
                                        <div class="form-group">
                                            <legend>Pin Code<sup>*</sup></legend>
-                                           <!--<input type="number" id="pin" name="pin" onblur="" class="input-border" required> -->
-                                           
-                                           <form  id="pp" method="post">
-                              						<input type="number"  name="pin" id="pin" class="input-border" required>
-                              						</form>
+                                          
+                                          <input type="number"  name="pin" id="pin" class="input-border" required>
+
                                           <script>
                                           $(function() {
                                               $('#pin').blur(function(event) {
@@ -51,9 +50,10 @@
                                                   alert(resp);
                                                   // do something when it was successful
                                       });
-                                  });
-                              });
-                              </script>
+                                     });
+                                     });
+                                     </script>
+
 
                             </div>
                             </div>
@@ -120,42 +120,32 @@
                                 </div>
 
                             </div>
+
                            <div class="box-footer">
                                 <div class="pull-left">
-                                    <a href="/cart" class="btn btn-default"><i class="fa fa-chevron-left"></i>Basket</a>
+                                    <a href="/cart" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back to basket</a>
                                 </div>
                                 <div class="pull-right">
 
-                            <!--  <button class="btn btn-default"> <script
-                                      src="https://checkout.razorpay.com/v1/checkout.js"
-                                      data-key="rzp_test_SbMRoudvvusfuG"
-                                      data-amount="<%= data.total*100 %>"
-                                      data-buttontext="Pay with Razorpay"
-                                      data-name="<%= user.firstname %>"
-                                      data-description="Purchase Description"
 
-                                      data-prefill.name="heloooooooooo"
-                                      data-prefill.email="<%= user.email %>"
-
-                                  ></script><i class="fa fa-chevron-right"></i>
-                                </button>-->
-                               <button class="btn btn-primary" src="https://checkout.razorpay.com/v1/checkout.js"  data-key="rzp_test_SbMRoudvvusfuG"
-                                  data-amount="<%= data.total*100 %>"
-                                  data-buttontext="Pay with Razorpay"
-                                  data-name="<%= user.firstname %>"
-                                  data-description="Purchase Description"
-
-                                  data-prefill.name="heloooooooooo"
-                                  data-prefill.email="<%= user.email %>">Pay With Razropay<i class="fa fa-chevron-right"></i></button>
 
                                 </div>
 
                             </div>
-
-
-
-
-
+                            <script
+                                src="https://checkout.razorpay.com/v1/checkout.js"
+                                data-key="rzp_test_SbMRoudvvusfuG"
+                                data-amount="2343543534"
+                                data-buttontext="Pay with Razorpay"
+                                data-name="<%= user.firstname %>"
+                                data-description="Purchase Description"
+                                data-image="https://your-awesome-site.com/your_logo.jpg"
+                                data-prefill.name="heloooooooooo"
+                                data-prefill.email="<%= user.email %>"
+                                data-theme.color="#F37254"
+                            ></script>
+                            <input type="hidden" value="Hidden Element" name="hidden">
+                          </form>
                      </div>
                 </div>
 
@@ -204,7 +194,7 @@
 
       </div>
       <div class="col-md-6">
-      <p class="pull-right change-color">Partners <a href="#">Ojasvi & Nitin</a>
+      <p class="pull-right change-color">Created by <a href="#">Oj & Bunny</a>
 
       </p>
       </div>

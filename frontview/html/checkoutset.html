@@ -32,23 +32,22 @@
                                    <div class="col-sm-6 col-md-4">
                                        <div class="form-group">
                                            <legend>Pin Code<sup>*</sup></legend>
-                                           <form  id="pp" method="post">
-                              						<input type="number"  name="pin" id="pin" class="input-border" required>
-                              						</form>
-                                          <script>
-                                          $(function() {
-                                              $('#pin').blur(function(event) {
+                                           <input type="number"  name="pin" id="pin" class="input-border" required>
 
-                                                event.preventDefault(); // Stops browser from navigating away from page
-                                                var data={pin: document.getElementById("pin").value};
-                                                // build a json object or do something with the form, store in data
-                                                $.post('/pinch', data, function(resp) {
-                                                  alert(resp);
-                                                  // do something when it was successful
+                                           <script>
+                                           $(function() {
+                                               $('#pin').blur(function(event) {
+
+                                                 event.preventDefault(); // Stops browser from navigating away from page
+                                                 var data={pin: document.getElementById("pin").value};
+                                                 // build a json object or do something with the form, store in data
+                                                 $.post('/pinch', data, function(resp) {
+                                                   alert(resp);
+                                                   // do something when it was successful
+                                       });
                                       });
-                                  });
-                              });
-                              </script>
+                                      });
+                                      </script>
 
                             </div>
                             </div>

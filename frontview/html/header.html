@@ -5,9 +5,9 @@
         <title>Shakooni MAMA</title>
 
         <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
-
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-
+        <meta name="google-signin-client_id" content="318407611269-e6sk5l2jkpr53ejks383s60mk6v12q2j.apps.googleusercontent.com">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/css/star-rating.min.css" />
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.2/js/star-rating.min.js"></script>
@@ -146,6 +146,17 @@
 						<div class="modal-body modal-body-sub_agile">
 						<div class="col-md-8  modal_body_left modal_body_left1">
 						<h3 class="agileinfo_sign">Sign In <span>Now</span></h3>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <script>
+            function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+</script>
+
 									<form action="/login" method="post">
                      <div class="form-group">
                         <input type="text" class="form-control" id="email-modal" name="username" placeholder="email">
