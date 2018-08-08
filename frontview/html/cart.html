@@ -62,7 +62,26 @@
 						</div>
 						<div class="clear"></div>
 						<% }else{ %>
+							<div class="product-top">
 			        <h3>Item Discontinued!!! Please Remove it  </h3>
+						</div>
+							<div class="product-middle">
+
+									<div class="checkout-remove btn-lg">
+									<form action="/remove" method="post">
+											<input type="hidden" name="item" value="<%= foundCart.items[i].id %>">
+											<input type="hidden" name="price" value="<%= foundCart.items[i].price %>">
+									<!--<button type="submit">Remove</button>-->
+									<a href="javascript:void(0)" class="remove">Remove</a>
+
+								</form>
+								</div>
+								</div>
+
+							<div class="product-right1">
+								<p>Rs.<%= foundCart.items[i].price %><p>
+								<div class="close"> </div>
+							</div>
 			        <% } %>
 					</div>
 
