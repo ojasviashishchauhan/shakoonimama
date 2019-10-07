@@ -19,6 +19,7 @@ var LocalStrategy = require('passport-local').Strategy;
 const helmet = require('helmet');
 app.use(helmet());
 
+
 app.use(session({ cookie: { maxAge: 6000000 },
                   secret: 'woot',
                   resave: true,
