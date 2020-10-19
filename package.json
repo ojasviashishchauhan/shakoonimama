@@ -1,3 +1,5 @@
+//package requires a comment is required
+
 {
   "requires": true,
   "lockfileVersion": 1,
