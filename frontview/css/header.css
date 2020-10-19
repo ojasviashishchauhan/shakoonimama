@@ -6,7 +6,6 @@
 .eye-text
 {
   border-radius: 10px;
-
 }
 }
 @media (max-width: 380px){
@@ -35,7 +34,7 @@
     padding-left: 0;
 }
 }
-*/
+*//* added indentation */
 
 @media (max-width: 320px ){
   .modal_body_right.modal_body_right1 {
